@@ -3,50 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agro Forte | Futuro Sustentável</title>
+    <title>AgroForte | Inovação Sustentável</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">Agro<span>Forte</span></div>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#sobre">Sustentabilidade</a></li>
-                <li><a href="#tecnologia">Tecnologia</a></li>
-                <li><button id="btn-contato">Contato</button></li>
-            </ul>
-        </nav>
-    </header>
+
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-seedling"></i> Agro<span>Forte</span>
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#home">Início</a></li>
+            <li><a href="#stats">Impacto</a></li>
+            <li><a href="#servicos">Tecnologias</a></li>
+            <li><a href="#contato" class="btn-nav">Fale Conosco</a></li>
+        </ul>
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
 
     <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>O Campo é a nossa força, a Sustentabilidade o nosso futuro.</h1>
-            <p>Unindo tecnologia de ponta com respeito ao meio ambiente para alimentar o mundo.</p>
-            <a href="#sobre" class="btn-main">Saiba Mais</a>
+        <div class="hero-text">
+            <span class="badge">Tecnologia & Natureza</span>
+            <h1>O Futuro do Agro é <span>Conectado</span> e Verde.</h1>
+            <p>Implementamos soluções de inteligência artificial e manejo regenerativo para dobrar sua produtividade com respeito ao solo.</p>
+            <div class="hero-btns">
+                <a href="#servicos" class="btn-primary">Nossas Soluções</a>
+                <a href="https://github.com" target="_blank" class="btn-secondary">Ver Projetos <i class="fab fa-github"></i></a>
+            </div>
         </div>
     </section>
 
-    <section id="sobre" class="info-section">
-        <h2>Pilares do Futuro</h2>
-        <div class="cards">
-            <div class="card">
-                <h3>Preservação</h3>
-                <p>Uso consciente de recursos hídricos e proteção de matas nativas.</p>
+    <section id="stats" class="stats-container">
+        <div class="stat-item">
+            <h2 class="counter" data-target="150">0</h2>
+            <p>Fazendas Parceiras</p>
+        </div>
+        <div class="stat-item">
+            <h2 class="counter" data-target="30">0</h2>
+            <p>% Menos Co2</p>
+        </div>
+        <div class="stat-item">
+            <h2 class="counter" data-target="500">0</h2>
+            <p>Hectares Monitorados</p>
+        </div>
+    </section>
+
+    <section id="servicos" class="services">
+        <div class="section-title">
+            <h2>Tecnologia de Ponta</h2>
+            <p>Conheça nossas ferramentas para uma gestão eficiente.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-drone"></i>
+                <h3>Drones de Precisão</h3>
+                <p>Mapeamento térmico e aplicação localizada de insumos.</p>
+                <a href="#" class="learn-more">Saiba mais →</a>
             </div>
-            <div class="card">
-                <h3>Inovação</h3>
-                <p>Monitoramento via satélite e drones para otimização de colheitas.</p>
+            <div class="service-card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Big Data Agro</h3>
+                <p>Análise de dados climáticos em tempo real para tomada de decisão.</p>
+                <a href="#" class="learn-more">Saiba mais →</a>
             </div>
-            <div class="card">
-                <h3>Produtividade</h3>
-                <p>Maximizando resultados com o mínimo de impacto ambiental.</p>
+            <div class="service-card">
+                <i class="fas fa-water"></i>
+                <h3>Irrigação Inteligente</h3>
+                <p>Sistemas automatizados que economizam até 40% de água.</p>
+                <a href="#" class="learn-more">Saiba mais →</a>
             </div>
+        </div>
+    </section>
+
+    <section id="contato" class="contact">
+        <div class="contact-box">
+            <h2>Transforme sua Colheita</h2>
+            <form id="agro-form">
+                <input type="text" placeholder="Seu Nome" required>
+                <input type="email" placeholder="E-mail Corporativo" required>
+                <textarea placeholder="Como podemos ajudar seu negócio?"></textarea>
+                <button type="submit" class="btn-submit">Enviar Mensagem</button>
+            </form>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Agro Forte - Criado para um amanhã melhor.</p>
+        <div class="footer-content">
+            <p>&copy; 2026 AgroForte Sustentável. Todos os direitos reservados.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
     </footer>
 
     <script src="script.js"></script>
