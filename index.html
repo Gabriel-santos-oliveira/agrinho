@@ -3,104 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgroForte | Inovação Sustentável</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="description" content="Agro Forte, Futuro Sustentável: Equilíbrio entre produção e meio ambiente.">
+    <title>Agro Forte: Futuro Sustentável</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
 </head>
 <body>
-
-    <nav class="navbar">
+    <header>
         <div class="logo">
-            <i class="fas fa-seedling"></i> Agro<span>Forte</span>
+            <h1>Agro Forte, Futuro Sustentável</h1>
+            <p>Equilíbrio entre produção e meio ambiente</p>
         </div>
-        <ul class="nav-links" id="nav-links">
-            <li><a href="#home">Início</a></li>
-            <li><a href="#stats">Impacto</a></li>
-            <li><a href="#servicos">Tecnologias</a></li>
-            <li><a href="#contato" class="btn-nav">Fale Conosco</a></li>
-        </ul>
-        <div class="menu-toggle" id="mobile-menu">
-            <i class="fas fa-bars"></i>
-        </div>
-    </nav>
-
-    <section id="home" class="hero">
-        <div class="hero-text">
-            <span class="badge">Tecnologia & Natureza</span>
-            <h1>O Futuro do Agro é <span>Conectado</span> e Verde.</h1>
-            <p>Implementamos soluções de inteligência artificial e manejo regenerativo para dobrar sua produtividade com respeito ao solo.</p>
-            <div class="hero-btns">
-                <a href="#servicos" class="btn-primary">Nossas Soluções</a>
-                <a href="https://github.com" target="_blank" class="btn-secondary">Ver Projetos <i class="fab fa-github"></i></a>
-            </div>
-        </div>
+    </header>
+    
+    <section class="intro">
+        <h2>O Futuro da Agricultura Sustentável</h2>
+        <p>A agricultura moderna precisa equilibrar produção de alimentos com a preservação do meio ambiente. É possível ter um futuro agroecológico, sustentável e produtivo.</p>
+        <img src="images/agriculture_sustainability.jpg" alt="Agricultura Sustentável">
     </section>
 
-    <section id="stats" class="stats-container">
-        <div class="stat-item">
-            <h2 class="counter" data-target="150">0</h2>
-            <p>Fazendas Parceiras</p>
-        </div>
-        <div class="stat-item">
-            <h2 class="counter" data-target="30">0</h2>
-            <p>% Menos Co2</p>
-        </div>
-        <div class="stat-item">
-            <h2 class="counter" data-target="500">0</h2>
-            <p>Hectares Monitorados</p>
-        </div>
+    <section class="buttons">
+        <h2>Explore Mais sobre o Tema</h2>
+        <button onclick="openLink('https://www.example.com')">O que é Agroecologia?</button>
+        <button onclick="openLink('https://www.example.com')">Tecnologia na Agricultura</button>
+        <button onclick="openLink('https://www.example.com')">Soluções para Sustentabilidade</button>
+        <button onclick="openLink('https://www.example.com')">Políticas Públicas para o Agro</button>
     </section>
 
-    <section id="servicos" class="services">
-        <div class="section-title">
-            <h2>Tecnologia de Ponta</h2>
-            <p>Conheça nossas ferramentas para uma gestão eficiente.</p>
-        </div>
-        <div class="services-grid">
-            <div class="service-card">
-                <i class="fas fa-drone"></i>
-                <h3>Drones de Precisão</h3>
-                <p>Mapeamento térmico e aplicação localizada de insumos.</p>
-                <a href="#" class="learn-more">Saiba mais →</a>
+    <section class="benefits">
+        <h2>Benefícios da Agricultura Sustentável</h2>
+        <div class="grid">
+            <div class="grid-item">
+                <img src="images/benefit_1.jpg" alt="Preservação Ambiental">
+                <h3>Preservação Ambiental</h3>
+                <p>Redução da emissão de gases de efeito estufa e conservação da biodiversidade.</p>
             </div>
-            <div class="service-card">
-                <i class="fas fa-chart-line"></i>
-                <h3>Big Data Agro</h3>
-                <p>Análise de dados climáticos em tempo real para tomada de decisão.</p>
-                <a href="#" class="learn-more">Saiba mais →</a>
+            <div class="grid-item">
+                <img src="images/benefit_2.jpg" alt="Segurança Alimentar">
+                <h3>Segurança Alimentar</h3>
+                <p>Aumento da produtividade sem comprometer os recursos naturais.</p>
             </div>
-            <div class="service-card">
-                <i class="fas fa-water"></i>
-                <h3>Irrigação Inteligente</h3>
-                <p>Sistemas automatizados que economizam até 40% de água.</p>
-                <a href="#" class="learn-more">Saiba mais →</a>
+            <div class="grid-item">
+                <img src="images/benefit_3.jpg" alt="Inovação Tecnológica">
+                <h3>Inovação Tecnológica</h3>
+                <p>Uso de tecnologias para monitoramento e otimização da produção agrícola.</p>
             </div>
-        </div>
-    </section>
-
-    <section id="contato" class="contact">
-        <div class="contact-box">
-            <h2>Transforme sua Colheita</h2>
-            <form id="agro-form">
-                <input type="text" placeholder="Seu Nome" required>
-                <input type="email" placeholder="E-mail Corporativo" required>
-                <textarea placeholder="Como podemos ajudar seu negócio?"></textarea>
-                <button type="submit" class="btn-submit">Enviar Mensagem</button>
-            </form>
         </div>
     </section>
 
     <footer>
-        <div class="footer-content">
-            <p>&copy; 2026 AgroForte Sustentável. Todos os direitos reservados.</p>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-whatsapp"></i></a>
-            </div>
-        </div>
+        <p>&copy; 2026 Agro Forte | Todos os direitos reservados.</p>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
