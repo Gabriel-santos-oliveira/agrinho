@@ -3,94 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Agro Forte, Futuro Sustentável: Equilíbrio entre produção e meio ambiente.">
-    <title>Agro Forte - Futuro Sustentável</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="scripts.js" defer></script>
+    <title>Agro Forte | Futuro Sustentável</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <header>
-        <div class="logo">
-            <h1>Agro Forte, Futuro Sustentável</h1>
-            <p>Transformando o setor agrícola em prol do meio ambiente.</p>
-        </div>
+        <nav>
+            <div class="logo">Agro<span>Sustentável</span></div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#pilares">Pilares</a></li>
+                <li><a href="#recursos">Recursos Externos</a></li>
+                <li><button id="theme-toggle">Alternar Modo</button></li>
+            </ul>
+        </nav>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="#introducao">Introdução</a></li>
-            <li><a href="#beneficios">Benefícios</a></li>
-            <li><a href="#tecnologia">Tecnologia no Agro</a></li>
-            <li><a href="#impacto">Impacto Ambiental</a></li>
-            <li><a href="#links">Explore</a></li>
-        </ul>
-    </nav>
-
-    <section id="introducao" class="section intro">
-        <h2>O Futuro da Agricultura Sustentável</h2>
-        <p>A agricultura moderna precisa encontrar o equilíbrio entre a produção de alimentos e a preservação ambiental. Vamos explorar como as tecnologias sustentáveis podem garantir a segurança alimentar e a conservação do meio ambiente.</p>
-        <div class="carousel">
-            <div class="carousel-item"><img src="images/agriculture1.jpg" alt="Agricultura Sustentável 1"></div>
-            <div class="carousel-item"><img src="images/agriculture2.jpg" alt="Agricultura Sustentável 2"></div>
-            <div class="carousel-item"><img src="images/agriculture3.jpg" alt="Agricultura Sustentável 3"></div>
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>O Equilíbrio entre Produção e Natureza</h1>
+            <p>Inovação tecnológica a serviço da segurança alimentar e preservação ambiental.</p>
+            <a href="https://www.embrapa.br" target="_blank" class="btn-main">Conheça a Embrapa</a>
         </div>
     </section>
 
-    <section id="beneficios" class="section benefits">
-        <h2>Benefícios da Agricultura Sustentável</h2>
-        <div class="grid">
-            <div class="grid-item">
-                <img src="images/benefit_1.jpg" alt="Benefício 1">
-                <h3>Preservação Ambiental</h3>
-                <p>Redução da emissão de gases de efeito estufa, preservação de habitats naturais, e maior eficiência no uso da água.</p>
+    <section id="pilares">
+        <h2>Nossos Pilares</h2>
+        <div class="card-container">
+            <div class="card">
+                <h3>Tecnologia no Campo</h3>
+                <p>Uso de drones e IA para otimizar a colheita.</p>
+                <a href="https://www.fao.org/home/en" target="_blank" class="btn-link">Ver FAO</a>
             </div>
-            <div class="grid-item">
-                <img src="images/benefit_2.jpg" alt="Benefício 2">
-                <h3>Segurança Alimentar</h3>
-                <p>O uso inteligente de recursos permite uma maior produção sem comprometer os ecossistemas.</p>
+            <div class="card">
+                <h3>Preservação</h3>
+                <p>Manejo de solo e recuperação de nascentes.</p>
+                <a href="https://www.wwf.org.br" target="_blank" class="btn-link">WWF Brasil</a>
             </div>
-            <div class="grid-item">
-                <img src="images/benefit_3.jpg" alt="Benefício 3">
-                <h3>Inovação Tecnológica</h3>
-                <p>O uso de drones, sensores e inteligência artificial ajuda a otimizar o processo agrícola e reduzir desperdícios.</p>
+            <div class="card">
+                <h3>Bioeconomia</h3>
+                <p>Transformando resíduos em energia limpa.</p>
+                <a href="https://www.gov.br/agricultura/pt-br" target="_blank" class="btn-link">Ministério da Agric.</a>
             </div>
         </div>
     </section>
 
-    <section id="tecnologia" class="section technology">
-        <h2>Tecnologia no Agro: Inovações que Mudam o Jogo</h2>
-        <div class="technology-grid">
-            <div class="tech-item">
-                <h3>AgTech e IoT</h3>
-                <p>Uso de Internet das Coisas (IoT) para monitoramento em tempo real das plantações e condições do solo.</p>
-            </div>
-            <div class="tech-item">
-                <h3>Drones e Sensores</h3>
-                <p>Drones são usados para monitorar grandes áreas de cultivo, otimizando o uso de insumos e detectando falhas rapidamente.</p>
-            </div>
-            <div class="tech-item">
-                <h3>Automação</h3>
-                <p>Sistemas automatizados estão cada vez mais presentes, ajudando na irrigação e colheita de forma eficiente.</p>
-            </div>
+    <section id="recursos">
+        <h2>Conecte-se com o Futuro</h2>
+        <div class="grid-buttons">
+            <button onclick="window.open('https://www.canalrural.com.br/')">Canal Rural</button>
+            <button onclick="window.open('https://www.agrolink.com.br/')">Agrolink</button>
+            <button onclick="window.open('https://www.cnabrasil.org.br/')">CNA Brasil</button>
+            <button onclick="window.open('https://g1.globo.com/economia/agronegocios/')">Globo Rural</button>
         </div>
-    </section>
-
-    <section id="impacto" class="section impact">
-        <h2>Impacto Ambiental e Soluções</h2>
-        <p>Embora o agro seja um dos maiores responsáveis pela emissão de gases de efeito estufa, soluções inovadoras podem reduzir esses impactos.</p>
-        <canvas id="impactChart" width="400" height="200"></canvas>
-    </section>
-
-    <section id="links" class="section links">
-        <h2>Explore Mais</h2>
-        <button onclick="openLink('https://www.agroecologia.com.br')">Saiba mais sobre Agroecologia</button>
-        <button onclick="openLink('https://www.sustentabilidadeagro.com')">Tecnologias Sustentáveis no Agro</button>
-        <button onclick="openLink('https://www.agroinovacao.com')">Inovações no Agro</button>
     </section>
 
     <footer>
-        <p>&copy; 2026 Agro Forte | Todos os direitos reservados.</p>
+        <p>&copy; 2026 Agro Forte - Desenvolvido para um futuro sustentável</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
