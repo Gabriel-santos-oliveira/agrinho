@@ -1,38 +1,50 @@
-// 1. Variável para o contador
-let contagemArvores = 0;
+// Função para alternar o Modo Escuro (Melhoria para o usuário)
+const themeToggleBtn = document.getElementById('theme-toggle');
 
-// 2. Função para personalizar saudação (Armazena e processa info)
-function personalizarSaudacao() {
-    const nome = document.getElementById('input-nome').value;
-    const h1 = document.getElementById('boas-vindas');
-    
-    if (nome.trim() !== "") {
-        h1.innerText = `Olá, ${nome}! Vamos cultivar o futuro?`;
-    } else {
-        alert("Por favor, digite seu nome.");
-    }
-}
-
-// 3. Manipulação do contador
-const btnContar = document.getElementById('btn-contar');
-const displayContador = document.getElementById('contador');
-
-btnContar.addEventListener('click', () => {
-    contagemArvores++;
-    displayContador.innerText = contagemArvores;
-    // Efeito visual simples via JS
-    displayContador.style.color = "#2d6a4f";
-    displayContador.style.fontWeight = "bold";
-});
-
-// 4. Alternar Modo Escuro (Melhoria para o usuário)
-const btnTheme = document.getElementById('btn-theme');
-btnTheme.addEventListener('click', () => {
+themeToggleBtn.addEventListener('click', function() {
+    // Adiciona ou remove a classe 'dark-mode' do elemento body
     document.body.classList.toggle('dark-mode');
     
-    if(document.body.classList.contains('dark-mode')) {
-        btnTheme.innerText = "Modo Claro";
+    // Altera o texto do botão dependendo do tema atual
+    if (document.body.classList.contains('dark-mode')) {
+        themeToggleBtn.textContent = 'Alternar Modo Claro';
     } else {
-        btnTheme.innerText = "Modo Escuro";
+        themeToggleBtn.textContent = 'Alternar Modo Escuro';
+    }
+});
+
+// Função para manipular o formulário e criar saudação personalizada
+const welcomeForm = document.getElementById('welcome-form');
+const userNameInput = document.getElementById('user-name');
+const greetingMessageDiv = document.getElementById('greeting-message');
+
+welcomeForm.addEventListener('submit', function(evento) {
+    // Previne o recarregamento padrão da página ao enviar o form
+    evento.preventDefault();
+    
+    // Utiliza variável para armazenar informação do usuário
+    const nomeDoUsuario = userNameInput.value;
+    
+    // Manipula o DOM alterando o HTML para exibir a mensagem
+    greetingMessageDiv.innerHTML = `<p>Olá, <strong>${nomeDoUsuario}</strong>! Obrigado por se importar com nosso planeta. Juntos, somos a força do novo Agro!</p>`;
+    
+    // Esconde o formulário manipulando o estilo
+    welcomeForm.style.display = 'none';
+});
+
+// Função para mostrar/esconder a DIV de detalhes sobre sustentabilidade
+const toggleDetailsBtn = document.getElementById('toggle-details');
+const detailsDiv = document.getElementById('sustainability-details');
+
+toggleDetailsBtn.addEventListener('click', function() {
+    // Verifica o estado atual de exibição da div
+    if (detailsDiv.style.display === 'none' || detailsDiv.style.display === '') {
+        // Mostra a div e atualiza o texto do botão
+        detailsDiv.style.display = 'block';
+        toggleDetailsBtn.textContent = 'Ocultar Detalhes';
+    } else {
+        // Esconde a div e volta o texto original
+        detailsDiv.style.display = 'none';
+        toggleDetailsBtn.textContent = 'Ler Mais Sobre Sustentabilidade';
     }
 });
