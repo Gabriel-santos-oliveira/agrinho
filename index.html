@@ -1,55 +1,76 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agro Sustentável - Equilíbrio no Campo</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Agro Sustentável - Equilíbrio Perfeito</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <header>
-        <nav id="navbar">
-            <div class="logo">AgroForte 🌾</div>
-            <button id="btn-theme">Modo Escuro</button>
-        </nav>
+    <header class="main-header">
+        <div class="logo">🌱 AgroSustenta</div>
+        <button id="theme-toggle" class="btn-primary">Alternar Modo Escuro</button>
     </header>
 
     <main>
-        <section id="hero">
-            <h1 id="boas-vindas">Bem-vindo ao Futuro do Campo</h1>
-            <p>A tecnologia e a natureza caminhando juntas para alimentar o mundo.</p>
-            <div class="input-group">
-                <input type="text" id="input-nome" placeholder="Digite seu nome">
-                <button onclick="personalizarSaudacao()">Entrar</button>
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Agro Forte, Futuro Sustentável</h1>
+                <p>O equilíbrio perfeito entre a produção de alimentos em larga escala e a preservação da nossa biodiversidade.</p>
+                
+                <div id="interaction-area">
+                    <form id="welcome-form">
+                        <label for="user-name">Como você se chama?</label>
+                        <input type="text" id="user-name" placeholder="Digite seu nome..." required>
+                        <button type="submit" class="btn-secondary">Entrar no Futuro do Agro</button>
+                    </form>
+                    <div id="greeting-message"></div>
+                </div>
+            </div>
+            <img src="img/hero-agro.jpg" alt="Campo de trigo com painéis solares" class="hero-img">
+        </section>
+
+        <section class="pillars-section">
+            <h2>Nossos Pilares para o Futuro</h2>
+            
+            <div class="cards-container">
+                <div class="card">
+                    <img src="img/tecnologia.jpg" alt="Drone sobre plantação">
+                    <h3>Tecnologia no Campo</h3>
+                    <p>Uso de drones, sensores de solo e IA para produzir mais usando menos água e defensivos.</p>
+                </div>
+                <div class="card">
+                    <img src="img/conservacao.jpg" alt="Mãos segurando terra com muda">
+                    <h3>Conservação do Solo</h3>
+                    <p>Técnicas como plantio direto e rotação de culturas protegem a terra para as próximas gerações.</p>
+                </div>
+            </div>
+            
+            <div class="more-info-container">
+                <button id="toggle-details" class="btn-primary">Ler Mais Sobre Sustentabilidade</button>
+                <div id="sustainability-details" style="display: none;">
+                    <p>A sustentabilidade no agronegócio não é apenas uma escolha, é a única garantia de sobrevivência da atividade. Integrar lavoura, pecuária e floresta (ILPF) reduz a emissão de carbono e recupera pastagens degradadas.</p>
+                </div>
             </div>
         </section>
 
-        <section id="cards-container">
-            <div class="card">
-                <h3>Bioinsumos</h3>
-                <p>Redução de químicos através de soluções naturais.</p>
-                <a href="https://www.embrapa.br" target="_blank" class="btn-link">Ver na Embrapa</a>
+        <section class="external-links">
+            <h2>Aprofunde seus Conhecimentos</h2>
+            <p>Explore sites oficiais para aprender mais sobre o agronegócio sustentável:</p>
+            <div class="buttons-grid">
+                <a href="https://www.embrapa.br/" target="_blank" class="btn-external">Acessar Embrapa</a>
+                <a href="https://www.fao.org/brasil/pt/" target="_blank" class="btn-external">FAO Brasil (ONU)</a>
+                <a href="https://www.gov.br/agricultura/pt-br" target="_blank" class="btn-external">Ministério da Agricultura</a>
+                <a href="https://www.wwf.org.br/" target="_blank" class="btn-external">WWF Brasil</a>
             </div>
-            <div class="card">
-                <h3>Agro 4.0</h3>
-                <p>Sensores e drones para economia de água e recursos.</p>
-                <a href="https://www.gov.br/agricultura" target="_blank" class="btn-link">Políticas Públicas</a>
-            </div>
-        </section>
-
-        <section id="interativo">
-            <h2>Calculadora de Impacto</h2>
-            <p>Quantas árvores você ajuda a preservar com o manejo correto?</p>
-            <button id="btn-contar">Plantar Árvore Virtual</button>
-            <p>Contagem: <span id="contador">0</span> unidades 🌳</p>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2026 Projeto Agrinho - Criatividade e Tecnologia</p>
+    <footer class="main-footer">
+        <p>Projeto Desenvolvido para o Tema Agrinho: Agro Forte, Futuro Sustentável.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
