@@ -1,81 +1,237 @@
+/* Variáveis para controle de tema (Claro/Escuro) */
 :root {
-    --primary: #2d6a4f;
-    --secondary: #95d5b2;
-    --dark: #1b4332;
-    --light: #f8f9fa;
-    --text: #333;
+    --bg-color: #f4f9f4;
+    --text-color: #2c3e50;
+    --primary-color: #27ae60;
+    --secondary-color: #2ecc71;
+    --card-bg: #ffffff;
+    --footer-bg: #1e3a29;
 }
 
-/* Modo Escuro */
-.dark-mode {
-    --primary: #95d5b2;
-    --light: #1b4332;
-    --text: #f8f9fa;
-    background-color: #081c15;
-    color: var(--text);
+/* Classe aplicada via JavaScript para Modo Escuro */
+body.dark-mode {
+    --bg-color: #1a1a1a;
+    --text-color: #e0e0e0;
+    --primary-color: #1b5e20;
+    --secondary-color: #2e7d32;
+    --card-bg: #2d2d2d;
+    --footer-bg: #112211;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    transition: background 0.3s ease;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-#navbar {
+/* Header */
+.main-header {
     display: flex;
     justify-content: space-between;
-    padding: 1rem 5%;
-    background: var(--primary);
-    color: white;
     align-items: center;
-}
-
-#hero {
-    text-align: center;
-    padding: 100px 20px;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('assets/img/agro-fundo.jpg');
-    background-size: cover;
+    padding: 20px 50px;
+    background-color: var(--primary-color);
     color: white;
 }
 
-#cards-container {
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Botões */
+button, .btn-external {
+    cursor: pointer;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease; /* Efeito suave guiando atenção */
+}
+
+.btn-primary {
+    background-color: var(--card-bg);
+    color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    transform: scale(1.05); /* Efeito visual no hover */
+}
+
+.btn-secondary {
+    background-color: var(--primary-color);
+    color: white;
+    margin-top: 10px;
+}
+
+.btn-secondary:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Hero Section */
+.hero-section {
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+    gap: 30px;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.hero-img {
+    flex: 1;
+    max-width: 50%;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Formulário */
+#welcome-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+#welcome-form input {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#greeting-message {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Pilares e Cards */
+.pillars-section {
+    padding: 50px;
+    text-align: center;
+}
+
+.cards-container {
+    display: flex;
     justify-content: center;
-    gap: 20px;
-    padding: 50px 5%;
+    gap: 30px;
+    margin-top: 30px;
 }
 
 .card {
-    background: white;
-    border-radius: 15px;
+    background-color: var(--card-bg);
     padding: 20px;
-    width: 300px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s, background 0.3s;
-    text-align: center;
-    color: #333;
+    border-radius: 10px;
+    width: 30%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
 }
 
 .card:hover {
     transform: translateY(-10px);
-    background: var(--secondary);
 }
 
-.btn-link {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 20px;
-    background: var(--primary);
+.card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.more-info-container {
+    margin-top: 30px;
+}
+
+#sustainability-details {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: var(--card-bg);
+    border-left: 5px solid var(--primary-color);
+    text-align: left;
+}
+
+/* Links Externos */
+.external-links {
+    padding: 50px;
+    background-color: var(--card-bg);
+    text-align: center;
+}
+
+.buttons-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.btn-external {
+    background-color: var(--secondary-color);
     color: white;
-    text-decoration: none;
-    border-radius: 5px;
 }
 
-/* Responsividade */
+.btn-external:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+/* Footer */
+.main-footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--footer-bg);
+    color: white;
+}
+
+/* Media Queries (Adaptação para Celulares e Tablets) */
 @media (max-width: 768px) {
-    #cards-container {
+    .main-header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .hero-section {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .hero-img {
+        max-width: 100%;
+        margin-top: 20px;
+    }
+
+    .cards-container {
         flex-direction: column;
         align-items: center;
+    }
+
+    .card {
+        width: 90%;
     }
 }
