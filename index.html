@@ -3,64 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agro Forte | Futuro Sustentável</title>
+    <title>Agro Sustentável - Equilíbrio no Campo</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
-        <nav>
-            <div class="logo">Agro<span>Sustentável</span></div>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#pilares">Pilares</a></li>
-                <li><a href="#recursos">Recursos Externos</a></li>
-                <li><button id="theme-toggle">Alternar Modo</button></li>
-            </ul>
+        <nav id="navbar">
+            <div class="logo">AgroForte 🌾</div>
+            <button id="btn-theme">Modo Escuro</button>
         </nav>
     </header>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>O Equilíbrio entre Produção e Natureza</h1>
-            <p>Inovação tecnológica a serviço da segurança alimentar e preservação ambiental.</p>
-            <a href="https://www.embrapa.br" target="_blank" class="btn-main">Conheça a Embrapa</a>
-        </div>
-    </section>
+    <main>
+        <section id="hero">
+            <h1 id="boas-vindas">Bem-vindo ao Futuro do Campo</h1>
+            <p>A tecnologia e a natureza caminhando juntas para alimentar o mundo.</p>
+            <div class="input-group">
+                <input type="text" id="input-nome" placeholder="Digite seu nome">
+                <button onclick="personalizarSaudacao()">Entrar</button>
+            </div>
+        </section>
 
-    <section id="pilares">
-        <h2>Nossos Pilares</h2>
-        <div class="card-container">
+        <section id="cards-container">
             <div class="card">
-                <h3>Tecnologia no Campo</h3>
-                <p>Uso de drones e IA para otimizar a colheita.</p>
-                <a href="https://www.fao.org/home/en" target="_blank" class="btn-link">Ver FAO</a>
+                <h3>Bioinsumos</h3>
+                <p>Redução de químicos através de soluções naturais.</p>
+                <a href="https://www.embrapa.br" target="_blank" class="btn-link">Ver na Embrapa</a>
             </div>
             <div class="card">
-                <h3>Preservação</h3>
-                <p>Manejo de solo e recuperação de nascentes.</p>
-                <a href="https://www.wwf.org.br" target="_blank" class="btn-link">WWF Brasil</a>
+                <h3>Agro 4.0</h3>
+                <p>Sensores e drones para economia de água e recursos.</p>
+                <a href="https://www.gov.br/agricultura" target="_blank" class="btn-link">Políticas Públicas</a>
             </div>
-            <div class="card">
-                <h3>Bioeconomia</h3>
-                <p>Transformando resíduos em energia limpa.</p>
-                <a href="https://www.gov.br/agricultura/pt-br" target="_blank" class="btn-link">Ministério da Agric.</a>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="recursos">
-        <h2>Conecte-se com o Futuro</h2>
-        <div class="grid-buttons">
-            <button onclick="window.open('https://www.canalrural.com.br/')">Canal Rural</button>
-            <button onclick="window.open('https://www.agrolink.com.br/')">Agrolink</button>
-            <button onclick="window.open('https://www.cnabrasil.org.br/')">CNA Brasil</button>
-            <button onclick="window.open('https://g1.globo.com/economia/agronegocios/')">Globo Rural</button>
-        </div>
-    </section>
+        <section id="interativo">
+            <h2>Calculadora de Impacto</h2>
+            <p>Quantas árvores você ajuda a preservar com o manejo correto?</p>
+            <button id="btn-contar">Plantar Árvore Virtual</button>
+            <p>Contagem: <span id="contador">0</span> unidades 🌳</p>
+        </section>
+    </main>
 
     <footer>
-        <p>&copy; 2026 Agro Forte - Desenvolvido para um futuro sustentável</p>
+        <p>&copy; 2026 Projeto Agrinho - Criatividade e Tecnologia</p>
     </footer>
 
     <script src="script.js"></script>
