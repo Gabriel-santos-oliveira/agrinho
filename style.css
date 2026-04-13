@@ -11,6 +11,7 @@ body.dark-mode header {
 body.dark-mode button {
     background-color: #333; /* Cor de fundo dos botões no modo escuro */
     color: white; /* Texto do botão em branco */
+    border: 1px solid #444; /* Border suave no botão */
 }
 
 body.dark-mode button:hover {
@@ -23,4 +24,32 @@ body.dark-mode a {
 
 body.dark-mode a:hover {
     color: #fbbd43; /* Cor do link quando passar o mouse */
+}
+
+/* Ajuste do modo claro - caso o usuário prefira */
+body {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+header {
+    background-color: #f1f1f1;
+}
+
+button {
+    background-color: #f1f1f1;
+    color: #333;
+    border: 1px solid #ccc;
+}
+
+button:hover {
+    background-color: #ddd;
+}
+
+a {
+    color: #1e90ff;
+}
+
+a:hover {
+    color: #00bfff;
 }
