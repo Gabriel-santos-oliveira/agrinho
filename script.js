@@ -1,9 +1,14 @@
-// Função para mostrar/ocultar informações sobre sustentabilidade
-document.getElementById('sustentabilidade-btn').addEventListener('click', function() {
-    const info = document.getElementById('info-sustentabilidade');
-    if (info.style.display === 'none') {
-        info.style.display = 'block';
+// Função para exibir mais informações na seção "Sobre"
+function mostrarInfo() {
+    const infoSobre = document.getElementById('info-sobre');
+    if (infoSobre.style.display === "none") {
+        infoSobre.style.display = "block";
     } else {
-        info.style.display = 'none';
+        infoSobre.style.display = "none";
     }
+}
+
+// Função para ativar/desativar o modo escuro
+document.getElementById('darkModeBtn').addEventListener('click', function() {
+    document.body.classList.toggle('dark-mode');
 });
