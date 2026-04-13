@@ -1,17 +1,20 @@
-# Agro Forte: Futuro Sustentável
+# Agro Forte, Futuro Sustentável
 
-Este projeto foi criado para demonstrar como o equilíbrio entre produção agrícola e preservação ambiental pode ser alcançado por meio de práticas sustentáveis. O site utiliza HTML, CSS e JavaScript para criar uma experiência interativa, com links externos, imagens e um design responsivo.
+## Objetivo
+Este projeto visa demonstrar a importância do equilíbrio entre produção agrícola e preservação do meio ambiente. Com o uso de tecnologias sustentáveis, é possível manter a produção agropecuária sem comprometer o futuro do planeta.
 
-## Tecnologias Utilizadas:
-- HTML5
-- CSS3
-- JavaScript
-- Media Queries (Design Responsivo)
+## Tecnologias Utilizadas
+- **HTML**: Para estruturar a página e interatividade.
+- **CSS**: Para o design e responsividade.
+- **JavaScript**: Para manipular o DOM e melhorar a experiência do usuário.
 
-## Como Usar:
+## Instruções de Uso
 1. Clone o repositório.
-2. Abra o arquivo `index.html` em seu navegador para visualizar o site.
-3. Navegue pelas seções e explore os links para aprender mais sobre práticas agrícolas sustentáveis.
+2. Abra o arquivo `index.html` em seu navegador.
+3. Explore as seções sobre produção, meio ambiente e contato.
+4. Use o botão de "Modo Escuro" para alternar entre temas claros e escuros.
 
-## Objetivo:
-O objetivo deste projeto é educar sobre práticas agrícolas sustentáveis e como elas contribuem para um futuro mais equilibrado entre produção e meio ambiente.
+## Como Contribuir
+1. Faça um fork deste repositório.
+2. Crie uma branch para suas modificações.
+3. Submeta um Pull Request com suas melhorias.
