@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agro Forte, Futuro Sustentável</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1>Agro Forte, Futuro Sustentável</h1>
+        <div class="logo">
+            <img src="assets/img/logo.png" alt="Agro Forte Logo">
+        </div>
         <nav>
             <ul>
                 <li><a href="#sobre">Sobre</a></li>
@@ -17,42 +20,59 @@
                 <li><a href="#contato">Contato</a></li>
             </ul>
         </nav>
+        <button id="darkModeBtn">Modo Escuro</button>
     </header>
 
-    <section id="sobre">
-        <h2>O Equilíbrio entre Produção e Meio Ambiente</h2>
-        <p>O agro tem o potencial de ser forte e sustentável. A chave é encontrar o equilíbrio entre a produção e a preservação ambiental.</p>
-        <button onclick="mostrarInfo()">Saiba mais</button>
-        <div id="info-sobre" style="display:none;">
-            <p>Este conteúdo detalha como práticas agrícolas podem ser implementadas para reduzir o impacto ambiental.</p>
+    <section id="hero" class="hero-section">
+        <div class="hero-content">
+            <h1>Agro Forte, Futuro Sustentável</h1>
+            <p>Encontre o equilíbrio perfeito entre produção e meio ambiente.</p>
+            <button onclick="scrollToSection('#sobre')">Saiba mais</button>
         </div>
     </section>
 
-    <section id="producao">
-        <h2>Produção Agropecuária e Sustentabilidade</h2>
-        <p>A produção agropecuária precisa ser mais eficiente, utilizando tecnologias sustentáveis para garantir o futuro do planeta.</p>
-        <button onclick="window.location.href='https://www.exemplo.com'">Visite nossa fonte externa</button>
+    <section id="sobre" class="info-section">
+        <h2>O Equilíbrio entre Produção e Meio Ambiente</h2>
+        <p>O setor agropecuário tem o poder de ser uma força vital para o futuro do planeta. No entanto, precisamos ser mais conscientes e encontrar soluções que garantam sustentabilidade.</p>
+        <button class="toggle-info-btn" onclick="toggleModal('sobreModal')">Ver mais</button>
+        <div id="sobreModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal('sobreModal')">&times;</span>
+                <h3>Práticas Sustentáveis</h3>
+                <p>Este conteúdo detalha como a agricultura e a pecuária podem ser gerenciadas para preservar nossos recursos naturais, como o uso de tecnologias verdes e o controle de impactos ambientais.</p>
+            </div>
+        </div>
     </section>
 
-    <section id="meio-ambiente">
+    <section id="producao" class="info-section">
+        <h2>Produção Agropecuária Sustentável</h2>
+        <p>A produção agropecuária é vital para nossa alimentação, mas como podemos torná-la mais sustentável? Explore os métodos e tecnologias que estão moldando o futuro da agricultura.</p>
+        <button onclick="window.location.href='https://www.exemplo.com'">Saiba mais</button>
+    </section>
+
+    <section id="meio-ambiente" class="info-section">
         <h2>Impacto Ambiental e Soluções</h2>
-        <p>Entenda como as práticas agrícolas podem ser otimizadas para reduzir os danos ao meio ambiente.</p>
-        <img src="assets/img/imagem1.jpg" alt="Imagem de práticas agrícolas sustentáveis" />
-        <img src="assets/img/imagem2.jpg" alt="Impacto ambiental" />
+        <div class="image-slider">
+            <div class="slide fade">
+                <img src="assets/img/imagem1.jpg" alt="Práticas agrícolas sustentáveis">
+            </div>
+            <div class="slide fade">
+                <img src="assets/img/imagem2.jpg" alt="Impacto ambiental na agricultura">
+            </div>
+        </div>
+        <p>O impacto da produção agropecuária no meio ambiente pode ser reduzido com práticas ecológicas e novas tecnologias.</p>
     </section>
 
     <footer id="contato">
         <h3>Entre em contato</h3>
         <form id="form-contato">
             <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome">
+            <input type="text" id="nome" name="nome" required>
             <label for="mensagem">Mensagem:</label>
-            <textarea id="mensagem" name="mensagem"></textarea>
+            <textarea id="mensagem" name="mensagem" required></textarea>
             <button type="submit">Enviar</button>
         </form>
     </footer>
-
-    <button id="darkModeBtn">Modo Escuro</button>
 
     <script src="script.js"></script>
 </body>
