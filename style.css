@@ -1,86 +1,81 @@
 :root {
-    --primary: #2d5a27;
-    --secondary: #8bc34a;
-    --dark: #1a1a1a;
-    --light: #f4f4f4;
+    --primary: #2d6a4f;
+    --secondary: #95d5b2;
+    --dark: #1b4332;
+    --light: #f8f9fa;
+    --text: #333;
+}
+
+/* Modo Escuro */
+.dark-mode {
+    --primary: #95d5b2;
+    --light: #1b4332;
+    --text: #f8f9fa;
+    background-color: #081c15;
+    color: var(--text);
 }
 
 body {
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
-    transition: 0.3s;
-    background-color: var(--light);
+    transition: background 0.3s ease;
 }
 
-header {
-    background: var(--primary);
-    color: white;
-    padding: 1rem 5%;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-nav {
+#navbar {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-}
-
-nav ul { display: flex; list-style: none; }
-nav ul li { margin-left: 20px; }
-nav a { color: white; text-decoration: none; font-weight: bold; }
-
-.hero {
-    height: 60vh;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 1rem 5%;
+    background: var(--primary);
     color: white;
-    text-align: center;
+    align-items: center;
 }
 
-.card-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+#hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('assets/img/agro-fundo.jpg');
+    background-size: cover;
+    color: white;
+}
+
+#cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
     padding: 50px 5%;
 }
 
 .card {
     background: white;
+    border-radius: 15px;
     padding: 20px;
-    border-radius: 10px;
+    width: 300px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s, background 0.3s;
     text-align: center;
+    color: #333;
 }
 
-.btn-main, .btn-link, .grid-buttons button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+.card:hover {
+    transform: translateY(-10px);
     background: var(--secondary);
+}
+
+.btn-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: var(--primary);
     color: white;
     text-decoration: none;
-    transition: 0.3s;
+    border-radius: 5px;
 }
 
-.grid-buttons {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    max-width: 600px;
-    margin: 20px auto;
-    padding-bottom: 50px;
+/* Responsividade */
+@media (max-width: 768px) {
+    #cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
 }
-
-.grid-buttons button:hover { background: var(--primary); transform: scale(1.05); }
-
-/* Dark Mode */
-body.dark-mode { background-color: #333; color: white; }
-body.dark-mode .card { background: #444; color: white; }
