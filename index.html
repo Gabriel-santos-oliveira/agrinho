@@ -24,62 +24,75 @@
         <section id="inicio" class="hero">
             <div class="container">
                 <div class="hero-content">
-                    <h1 id="welcome-msg">Bem-vindo ao Futuro do Agro</h1>
-                    <p>Equilibrando a produtividade do campo com a preservação ambiental através da tecnologia.</p>
-                    <div class="user-input">
-                        <input type="text" id="user-name" placeholder="Digite seu nome">
-                        <button onclick="personalizarSaudacao()" class="btn-primary">Personalizar</button>
+                    <h1 id="welcome-msg">Agro Forte, Futuro Sustentável</h1>
+                    <p>Tecnologia e consciência para alimentar o mundo preservando a natureza.</p>
+                    
+                    <div class="user-interaction">
+                        <label for="user-name">Como devemos te chamar?</label>
+                        <div class="input-group">
+                            <input type="text" id="user-name" placeholder="Digite seu nome...">
+                            <button onclick="personalizarSaudacao()" class="btn-primary">Entrar no Campo</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="pilares" class="container section">
-            <h2 class="text-center">Nossos Pilares</h2>
+            <h2 class="section-title">Equilíbrio Necessário</h2>
             <div class="grid">
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&w=400&q=80" alt="Tecnologia no Campo">
+                <article class="card">
+                    <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&w=400&q=80" alt="Agricultura Digital">
                     <h3>Tecnologia de Precisão</h3>
-                    <p>Uso de drones e sensores para reduzir o desperdício de insumos.</p>
-                    <a href="https://www.embrapa.br/tema-agricultura-de-precisao" target="_blank" class="link-btn">Saiba Mais →</a>
-                </div>
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=400&q=80" alt="Preservação">
-                    <h3>Preservação Hídrica</h3>
-                    <p>Sistemas inteligentes de irrigação que economizam até 40% de água.</p>
-                    <a href="https://www.fao.org/land-water/en/" target="_blank" class="link-btn">Fontes FAO →</a>
-                </div>
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=400&q=80" alt="Energia Limpa">
-                    <h3>Energia Limpa</h3>
-                    <p>O campo como gerador de energia solar e biomassa sustentável.</p>
-                    <a href="https://www.gov.br/mme/pt-br" target="_blank" class="link-btn">Políticas Públicas →</a>
-                </div>
+                    <p>Redução de defensivos e otimização de colheitas com inteligência artificial.</p>
+                    <a href="https://www.embrapa.br" target="_blank" class="external-link">Conhecer Embrapa →</a>
+                </article>
+
+                <article class="card">
+                    <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=400&q=80" alt="Irrigação">
+                    <h3>Gestão de Recursos</h3>
+                    <p>Uso inteligente da água e recuperação de solos degradados para o futuro.</p>
+                    <a href="https://www.fao.org/brasil/pt/" target="_blank" class="external-link">Dados da FAO →</a>
+                </article>
+
+                <article class="card">
+                    <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=400&q=80" alt="Energia Solar">
+                    <h3>Energia Renovável</h3>
+                    <p>Fazendas que produzem sua própria energia através de fontes limpas.</p>
+                    <a href="https://www.gov.br/mme/pt-br" target="_blank" class="external-link">Ministério de Energia →</a>
+                </article>
             </div>
         </section>
 
         <section id="contato" class="container section">
-            <div class="contact-box">
-                <h3>Faça parte dessa mudança</h3>
-                <form id="contact-form">
-                    <label for="nome">Nome:</label>
-                    <input type="text" id="nome" required>
-                    
-                    <label for="email">E-mail:</label>
-                    <input type="email" id="email" required>
+            <div class="config-panel">
+                <h3>Acessibilidade e Contato</h3>
+                
+                <div class="control-item">
+                    <label for="font-slider">Tamanho do texto:</label>
+                    <input type="range" id="font-slider" min="14" max="22" value="16">
+                </div>
 
-                    <label for="font-size">Ajustar Tamanho da Fonte:</label>
-                    <input type="range" id="font-slider" min="14" max="24" value="16">
-                    
-                    <button type="submit" class="btn-primary">Enviar Interesse</button>
+                <form id="contact-form" class="main-form">
+                    <div class="form-group">
+                        <label for="nome-contato">Nome Completo:</label>
+                        <input type="text" id="nome-contato" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email-contato">Seu melhor E-mail:</label>
+                        <input type="email" id="email-contato" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Enviar Mensagem</button>
                 </form>
-                <div id="form-feedback" class="hidden">Obrigado! Entraremos em contato.</div>
+                <div id="form-feedback" class="hidden-msg">Mensagem enviada! Juntos pelo agro sustentável.</div>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Projeto Agrinho - Desenvolvimento Sustentável. Feito com ❤️ e Código.</p>
+        <div class="container">
+            <p>&copy; 2024 Projeto Agrinho - Tecnologia por [Seu Nome]</p>
+        </div>
     </footer>
 
     <script src="js/script.js"></script>
