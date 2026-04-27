@@ -1,47 +1,62 @@
 /* Variáveis de cor */
 :root {
-    --verde-agro: #3a8d41;
-    --laranja-agro: #f39200;
+    --verde-claro: #66BB6A;
+    --verde-escuro: #388E3C;
+    --laranja: #FF7043;
     --cinza-claro: #f4f4f4;
-    --cor-texto: #333;
+    --texto-claro: #ffffff;
+    --texto-escuro: #333333;
 }
 
-/* Estilos Gerais */
+/* Reset e estilo geral */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     background-color: var(--cinza-claro);
-    color: var(--cor-texto);
+    color: var(--texto-escuro);
     margin: 0;
     padding: 0;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-header.cabecalho {
-    background-color: var(--verde-agro);
-    color: white;
+/* Header */
+header {
+    background-color: var(--verde-escuro);
+    color: var(--texto-claro);
     padding: 20px;
     text-align: center;
 }
 
-nav a {
-    margin: 0 15px;
-    text-decoration: none;
-    color: white;
+header h1 {
+    font-size: 2.5em;
+    margin: 0;
 }
 
-nav a:hover {
+header nav {
+    margin-top: 15px;
+}
+
+header nav a {
+    color: var(--texto-claro);
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+header nav a:hover {
     text-decoration: underline;
 }
 
-#modo-escuro-btn {
-    background-color: #333;
-    color: white;
-    padding: 10px 20px;
+header #modo-escuro-btn {
+    background-color: var(--laranja);
     border: none;
+    color: var(--texto-claro);
+    padding: 10px 20px;
     cursor: pointer;
+    margin-top: 20px;
 }
 
-#modo-escuro-btn:hover {
-    background-color: #555;
+header #modo-escuro-btn:hover {
+    background-color: #e64a19;
 }
 
 /* Seções */
@@ -53,24 +68,32 @@ section {
     margin-bottom: 40px;
 }
 
-h2 {
-    color: var(--laranja-agro);
+section h2 {
+    font-size: 2em;
+    color: var(--verde-escuro);
 }
 
+section p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+/* Imagens da Galeria */
 .galeria {
     display: flex;
     gap: 15px;
     flex-wrap: wrap;
 }
 
-img {
+.galeria img {
     width: 100%;
-    max-width: 300px;
-    border-radius: 8px;
+    max-width: 400px;
+    border-radius: 10px;
     transition: transform 0.3s ease;
 }
 
-img:hover {
+.galeria img:hover {
     transform: scale(1.05);
 }
 
@@ -84,35 +107,50 @@ form {
 
 input, textarea {
     padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #aaa;
-    border-radius: 4px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1em;
 }
 
 button {
     padding: 10px;
-    background-color: var(--laranja-agro);
-    color: white;
+    background-color: var(--laranja);
+    color: var(--texto-claro);
     border: none;
     cursor: pointer;
+    font-size: 1.1em;
 }
 
 button:hover {
-    background-color: #e67300;
+    background-color: #e64a19;
 }
 
-/* Responsividade */
-@media screen and (max-width: 600px) {
-    nav a {
-        display: block;
-        margin: 10px 0;
-    }
-
-    img {
-        width: 100%;
-    }
-
-    form {
-        width: 100%;
-    }
+/* Modo Escuro */
+body.modo-escuro {
+    background-color: #222;
+    color: var(--texto-claro);
 }
+
+body.modo-escuro header {
+    background-color: #333;
+}
+
+body.modo-escuro button {
+    background-color: var(--laranja);
+}
+
+body.modo-escuro header nav a {
+    color: var(--texto-claro);
+}
+
+body.modo-escuro section h2 {
+    color: var(--laranja);
+}
+
+body.modo-escuro footer {
+    background-color: #111;
+    color: var(--texto-claro);
+}
+
+/
