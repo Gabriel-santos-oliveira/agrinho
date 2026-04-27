@@ -1,56 +1,56 @@
-// --- 1. LÓGICA DE SAUDAÇÃO PERSONALIZADA ---
-function personalizarSaudacao() {
-    // Armazena o valor do input em uma variável
-    const nome = document.getElementById('user-name').value;
-    const saudacaoDisplay = document.getElementById('welcome-msg');
+// 1. Função para Personalização de Boas-vindas
+const btnPersonalizar = document.getElementById('btn-personalizar');
+const inputNome = document.getElementById('input-nome');
+const textoSaudacao = document.getElementById('saudacao-dinamica');
 
-    if (nome.trim() !== "") {
-        // Processa a informação (deixa em maiúsculo)
-        const nomeLimpo = nome.toUpperCase();
-        // Manipula o DOM para atualizar o texto na tela
-        saudacaoDisplay.innerText = `Olá, ${nomeLimpo}! Você faz parte do futuro!`;
+btnPersonalizar.addEventListener('click', () => {
+    // Armazena informação em uma variável antes de exibir
+    let nomeUsuario = inputNome.value;
+    
+    if(nomeUsuario.trim() === "") {
+        alert("Por favor, digite seu nome!");
     } else {
-        alert("Por favor, diga-nos o seu nome!");
+        // Manipula o DOM alterando o texto
+        textoSaudacao.innerText = `Olá, ${nomeUsuario}! Vamos transformar o Agro?`;
+        inputNome.value = ""; // Limpa o campo
     }
-}
+});
 
-// --- 2. LÓGICA DO MODO ESCURO (CORRIGIDA) ---
-const themeBtn = document.getElementById('theme-toggle');
-
-themeBtn.addEventListener('click', () => {
-    // Alterna a classe dark-mode no body
+// 2. Lógica de Modo Escuro
+const btnDarkMode = document.getElementById('dark-mode-toggle');
+btnDarkMode.addEventListener('click', () => {
+    // Altera a classe do body para ativar o modo escuro no CSS
     document.body.classList.toggle('dark-mode');
     
-    // Altera o texto do botão para feedback visual
-    if (document.body.classList.contains('dark-mode')) {
-        themeBtn.innerText = "☀️ Modo Claro";
-        console.log("Modo Escuro Ativado");
-    } else {
-        themeBtn.innerText = "🌓 Modo Escuro";
-        console.log("Modo Claro Ativado");
+    // Efeito visual no botão
+    btnDarkMode.style.transform = "scale(1.2)";
+    setTimeout(() => btnDarkMode.style.transform = "scale(1)", 200);
+});
+
+// 3. Alteração de Tamanho de Fonte (Acessibilidade)
+let fontSizeAtual = 16;
+function alterarFonte(acao) {
+    const corpo = document.body;
+    if(acao === 'aumentar' && fontSizeAtual < 24) {
+        fontSizeAtual += 2;
+    } else if(acao === 'diminuir' && fontSizeAtual > 12) {
+        fontSizeAtual -= 2;
     }
-});
+    // Atualiza o CSS via JS
+    corpo.style.fontSize = fontSizeAtual + "px";
+}
 
-// --- 3. AJUSTE DE TAMANHO DE FONTE ---
-const fontSlider = document.getElementById('font-slider');
+// 4. Manipulação de Formulário com Feedback Visual
+const form = document.getElementById('form-sustentavel');
+const feedback = document.getElementById('feedback-form');
 
-fontSlider.addEventListener('input', (event) => {
-    const novoTamanho = event.target.value + "px";
-    // Altera o estilo diretamente no elemento body
-    document.body.style.fontSize = novoTamanho;
-});
-
-// --- 4. MANIPULAÇÃO DE FORMULÁRIO ---
-const form = document.getElementById('contact-form');
-const feedback = document.getElementById('form-feedback');
-
-form.addEventListener('submit', (e) => {
-    // Impede a página de recarregar (Comportamento padrão)
-    e.preventDefault();
+form.addEventListener('submit', (event) => {
+    event.preventDefault(); // Impede o recarregamento da página
     
-    // Esconde o formulário e mostra a div de agradecimento
-    form.style.display = "none";
-    feedback.style.display = "block";
+    // Esconde o formulário e mostra a div de feedback
+    form.classList.add('hidden');
+    feedback.classList.remove('hidden');
     
-    console.log("Dados de contato enviados!");
+    // Log explicativo para o console (bom para o nível de estudante)
+    console.log("Formulário processado com sucesso.");
 });
