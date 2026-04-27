@@ -1,156 +1,73 @@
-/* Variáveis de cor */
-:root {
-    --verde-claro: #66BB6A;
-    --verde-escuro: #388E3C;
-    --laranja: #FF7043;
-    --cinza-claro: #f4f4f4;
-    --texto-claro: #ffffff;
-    --texto-escuro: #333333;
-}
-
-/* Reset e estilo geral */
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: var(--cinza-claro);
-    color: var(--texto-escuro);
+* {
     margin: 0;
     padding: 0;
-    transition: background-color 0.3s, color 0.3s;
+    box-sizing: border-box;
 }
 
-/* Header */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
 header {
-    background-color: var(--verde-escuro);
-    color: var(--texto-claro);
+    background-color: #006400;
     padding: 20px;
     text-align: center;
 }
 
-header h1 {
-    font-size: 2.5em;
-    margin: 0;
+header nav ul {
+    list-style: none;
 }
 
-header nav {
-    margin-top: 15px;
-}
-
-header nav a {
-    color: var(--texto-claro);
-    text-decoration: none;
+header nav ul li {
+    display: inline;
     margin: 0 15px;
-    font-weight: bold;
 }
 
-header nav a:hover {
-    text-decoration: underline;
-}
-
-header #modo-escuro-btn {
-    background-color: var(--laranja);
-    border: none;
-    color: var(--texto-claro);
-    padding: 10px 20px;
-    cursor: pointer;
-    margin-top: 20px;
-}
-
-header #modo-escuro-btn:hover {
-    background-color: #e64a19;
-}
-
-/* Seções */
-main {
-    padding: 20px;
-}
-
-section {
-    margin-bottom: 40px;
-}
-
-section h2 {
-    font-size: 2em;
-    color: var(--verde-escuro);
-}
-
-section p {
-    font-size: 1.2em;
-    line-height: 1.6;
-    margin-top: 10px;
-}
-
-/* Imagens da Galeria */
-.galeria {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.galeria img {
-    width: 100%;
-    max-width: 400px;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-}
-
-.galeria img:hover {
-    transform: scale(1.05);
-}
-
-/* Formulário */
-form {
-    display: flex;
-    flex-direction: column;
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-input, textarea {
-    padding: 10px;
-    margin-bottom: 15px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 1em;
+header nav ul li a {
+    text-decoration: none;
+    color: white;
 }
 
 button {
-    padding: 10px;
-    background-color: var(--laranja);
-    color: var(--texto-claro);
+    padding: 10px 15px;
+    background-color: #008000;
+    color: white;
     border: none;
     cursor: pointer;
-    font-size: 1.1em;
+    font-size: 16px;
 }
 
 button:hover {
-    background-color: #e64a19;
+    background-color: #004d00;
 }
 
-/* Modo Escuro */
-body.modo-escuro {
-    background-color: #222;
-    color: var(--texto-claro);
+#modo-escuro {
+    margin-top: 20px;
 }
 
-body.modo-escuro header {
+section {
+    padding: 20px;
+    margin: 10px;
+}
+
+#impacto img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    margin-top: 20px;
+}
+
+#detalhes {
+    background-color: #e7f7e7;
+    padding: 15px;
+    margin-top: 15px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
     background-color: #333;
+    color: white;
 }
-
-body.modo-escuro button {
-    background-color: var(--laranja);
-}
-
-body.modo-escuro header nav a {
-    color: var(--texto-claro);
-}
-
-body.modo-escuro section h2 {
-    color: var(--laranja);
-}
-
-body.modo-escuro footer {
-    background-color: #111;
-    color: var(--texto-claro);
-}
-
-/
