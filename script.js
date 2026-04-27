@@ -1,47 +1,40 @@
-// Alterna o modo escuro
-document.getElementById('modo-escuro').addEventListener('click', function () {
+// Alternar Modo Escuro
+document.getElementById('modo-escuro').addEventListener('click', () => {
     document.body.classList.toggle('modo-escuro');
 });
 
-// Função para abrir link de sustentabilidade
-function openLink() {
-    window.open('https://www.exemplo.com/sustentabilidade', '_blank');
-}
-
-// Função para alternar a exibição de detalhes
+// Exibir/Esconder Detalhes (Correção do erro de primeiro clique)
 function toggleDiv() {
     const div = document.getElementById('detalhes');
-    div.style.display = (div.style.display === 'none') ? 'block' : 'none';
+    if (div.style.display === 'block') {
+        div.style.display = 'none';
+    } else {
+        div.style.display = 'block';
+    }
 }
 
-// Função para enviar formulário
+// Envio de Formulário
 function handleSubmit(event) {
     event.preventDefault();
     const nome = document.getElementById('nome').value;
-    const email = document.getElementById('email').value;
-    const comentarios = document.getElementById('comentarios').value;
-    alert(`Obrigado pelo seu feedback, ${nome}! Responderemos em breve no seu email: ${email}. Comentário: ${comentarios}`);
+    alert(`Obrigado, ${nome}! Recebemos sua mensagem.`);
+    event.target.reset();
 }
 
-// Gráfico Impacto com Chart.js
+// Gráfico (Inicia após carregar a página)
 const ctx = document.getElementById('graficoImpacto').getContext('2d');
-const graficoImpacto = new Chart(ctx, {
+new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: ['Práticas Convencionais', 'Práticas Sustentáveis'],
+        labels: ['Convencional', 'Sustentável'],
         datasets: [{
-            label: 'Emissão de CO2 (toneladas)',
+            label: 'Emissão de CO2 (ton)',
             data: [1500, 200],
-            backgroundColor: ['#ff6347', '#28a745'],
-            borderColor: ['#d9534f', '#218838'],
-            borderWidth: 1
+            backgroundColor: ['#ff6347', '#28a745']
         }]
     },
     options: {
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        }
+        responsive: true,
+        scales: { y: { beginAtZero: true } }
     }
 });
