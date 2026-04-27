@@ -1,91 +1,49 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agro Forte - Futuro Sustentável</title>
-    <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-    <header class="cabecalho">
-        <h1>Agro Forte: O Futuro Sustentável</h1>
+    <header>
         <nav>
-            <a href="#sobre">Sobre o Agro</a>
-            <a href="#tecnologia">Tecnologia</a>
-            <a href="#sustentabilidade">Sustentabilidade</a>
-            <a href="#parceiros">Parceiros</a>
-            <a href="#contato">Contato</a>
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#impacto">Impacto Ambiental</a></li>
+                <li><a href="#solucoes">Soluções Sustentáveis</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
         </nav>
-        <button id="modo-escuro-btn">Modo Escuro</button>
+        <button id="modo-escuro">Modo Escuro</button>
     </header>
 
-    <main>
-        <section id="sobre">
-            <h2>O Agro e o Futuro Sustentável</h2>
-            <p>O setor agropecuário é um dos pilares mais importantes para a economia global. Mas, além disso, ele
-                precisa ser cada vez mais sustentável, equilibrando a produção com a preservação ambiental. Este é o
-                objetivo da iniciativa "Agro Forte", que busca integrar inovação tecnológica e práticas ambientais
-                responsáveis para garantir a segurança alimentar e a preservação dos recursos naturais para as futuras
-                gerações.</p>
-            <p>O agro do futuro é digital, inovador e, acima de tudo, sustentável. Estamos em uma era onde a
-                tecnologia se alia à natureza para criar soluções que aumentam a produtividade sem comprometer o meio
-                ambiente.</p>
-        </section>
+    <section id="sobre">
+        <h1>Agro Forte: O Futuro Sustentável</h1>
+        <p>A agricultura moderna precisa equilibrar a produção com a preservação ambiental. Isso é possível com práticas sustentáveis que promovem o uso racional dos recursos naturais.</p>
+        <button id="link-sustentabilidade" onclick="openLink()">Saiba Mais sobre Sustentabilidade</button>
+    </section>
 
-        <section id="tecnologia">
-            <h2>Tecnologia no Campo</h2>
-            <p>A tecnologia tem sido uma grande aliada da agricultura moderna. Drones, sensores de umidade, e sistemas
-                automatizados são apenas algumas das inovações que estão transformando o campo. Elas não apenas
-                aumentam a produtividade, mas também promovem a eficiência no uso de recursos naturais, como água e
-                energia.</p>
-            <p>Hoje, a agricultura de precisão é uma realidade. Com o uso de dados e algoritmos, é possível planejar o
-                uso de insumos e recursos de maneira mais eficaz, evitando desperdícios e impactando menos o meio
-                ambiente.</p>
-            <div class="galeria">
-                <img src="https://www.example.com/imagens/drone.jpg" alt="Drone no campo">
-                <img src="https://www.example.com/imagens/sensor.jpg" alt="Sensor agrícola">
-            </div>
-        </section>
+    <section id="impacto">
+        <h2>Impacto Ambiental da Agricultura</h2>
+        <p>Embora a agricultura seja essencial para a nossa alimentação, ela também impacta diretamente o meio ambiente, principalmente na questão do desmatamento e emissão de gases do efeito estufa.</p>
+        <img src="img/impacto.jpg" alt="Impacto Ambiental">
+    </section>
 
-        <section id="sustentabilidade">
-            <h2>Práticas Sustentáveis no Agro</h2>
-            <p>A sustentabilidade não é apenas uma tendência, é uma necessidade. Os agricultores do futuro precisam adotar
-                práticas que respeitem o meio ambiente, como o uso consciente da água, a rotação de culturas, a
-                preservação da biodiversidade e a redução das emissões de carbono. A agricultura regenerativa é uma das
-                abordagens mais promissoras para garantir a saúde dos solos e a recuperação dos ecossistemas.</p>
-            <p>Através do uso de tecnologias e metodologias mais eficientes, podemos transformar a produção agrícola em
-                um processo ainda mais sustentável, com menos impacto ambiental e mais benefícios para a sociedade.</p>
-        </section>
+    <section id="solucoes">
+        <h2>Soluções para um Futuro Sustentável</h2>
+        <p>Existem várias práticas que podem tornar a agricultura mais sustentável, como o uso de tecnologias verdes e a integração de práticas agroecológicas.</p>
+        <button class="btn-sustentabilidade" onclick="toggleDiv()">Veja como funciona a Agricultura Sustentável</button>
+        <div id="detalhes" style="display: none;">
+            <p>A agricultura sustentável envolve técnicas como o uso eficiente da água, controle biológico de pragas, e a rotação de culturas.</p>
+        </div>
+    </section>
 
-        <section id="parceiros">
-            <h2>Nossos Parceiros</h2>
-            <p>Trabalhamos com empresas, instituições de pesquisa e organizações que acreditam em um futuro mais
-                sustentável e inovador para o setor agropecuário. Juntos, estamos promovendo soluções que integram
-                tecnologia e preservação ambiental.</p>
-            <div class="galeria">
-                <img src="https://www.example.com/imagens/parceiro1.jpg" alt="Parceiro 1">
-                <img src="https://www.example.com/imagens/parceiro2.jpg" alt="Parceiro 2">
-            </div>
-        </section>
-
-        <section id="contato">
-            <h2>Entre em Contato</h2>
-            <form id="form-contato">
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome" required>
-                <label for="mensagem">Mensagem:</label>
-                <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
-                <button type="submit">Enviar</button>
-            </form>
-        </section>
-    </main>
-
-    <footer class="rodape">
-        <p>&copy; 2025 - Agro Forte | Todos os direitos reservados.</p>
+    <footer>
+        <p>&copy; 2025 Agro Forte. Todos os direitos reservados.</p>
     </footer>
-</body>
 
+    <script src="script.js"></script>
+</body>
 </html>
