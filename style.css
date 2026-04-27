@@ -1,14 +1,13 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f4f4f9;
     color: #333;
     transition: background-color 0.4s, color 0.4s;
-    line-height: 1.6;
 }
 
-.container { width: 90%; max-width: 1100px; margin: 0 auto; }
+.container { width: 90%; max-width: 1000px; margin: 0 auto; }
 
 header {
     background-color: #006400;
@@ -17,7 +16,7 @@ header {
     text-align: center;
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
 }
 
 nav ul { list-style: none; padding: 15px 0; }
@@ -27,43 +26,32 @@ nav ul li a { color: white; text-decoration: none; font-weight: bold; }
 .section {
     padding: 60px 20px;
     background: white;
-    margin: 20px 0;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    margin: 30px 0;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
-.img-impacto { width: 100%; border-radius: 10px; margin-top: 20px; }
-
-.detalhes {
-    display: none; /* O JS vai controlar isso */
-    background: #e7f7e7;
-    padding: 20px;
-    margin-top: 15px;
-    border-radius: 8px;
-}
+.img-impacto { width: 100%; border-radius: 10px; }
 
 form { display: flex; flex-direction: column; gap: 10px; }
-input, textarea { padding: 12px; border: 1px solid #ddd; border-radius: 6px; }
+input, textarea { padding: 12px; border: 1px solid #ddd; border-radius: 8px; }
 
 button {
-    background: #008000;
+    background: #28a745;
     color: white;
     border: none;
     padding: 12px 25px;
-    border-radius: 6px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: 0.3s;
+    font-weight: bold;
 }
 
-button:hover { background: #004d00; transform: translateY(-2px); }
+/* --- REGRAS DO MODO ESCURO --- */
+body.modo-escuro { background-color: #121212; color: #e0e0e0; }
+body.modo-escuro .section { background-color: #1e1e1e; box-shadow: 0 5px 15px rgba(255,255,255,0.05); }
+body.modo-escuro input, body.modo-escuro textarea { background: #333; color: white; border-color: #444; }
 
-/* MODO ESCURO */
-body.modo-escuro { background-color: #121212; color: #f0f0f0; }
-body.modo-escuro .section { background-color: #1e1e1e; color: #f0f0f0; }
-body.modo-escuro .detalhes { background-color: #2d4a2d; }
-body.modo-escuro input, body.modo-escuro textarea { background: #333; color: white; border: 1px solid #444; }
-
-/* Celular */
+/* Responsividade Celular */
 @media (max-width: 600px) {
-    nav ul li { display: block; margin: 10px 0; }
+    nav ul li { display: block; margin-bottom: 10px; }
 }
