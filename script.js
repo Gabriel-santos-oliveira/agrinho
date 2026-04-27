@@ -1,29 +1,51 @@
-// Função para ativar/desativar o modo escuro
-const darkModeBtn = document.getElementById('darkModeBtn');
-const body = document.body;
-
-// Verifica se o usuário tem preferência salva no localStorage
-if(localStorage.getItem('dark-mode') === 'true') {
-    body.classList.add('dark-mode');
+// 1. Variáveis e Manipulação de DOM para Saudação
+function personalizarSaudacao() {
+    const nomeInput = document.getElementById('user-name').value;
+    const msgElemento = document.getElementById('welcome-msg');
+    
+    if (nomeInput.trim() !== "") {
+        // Processa a informação antes de exibir
+        const nomeFormatado = nomeInput.charAt(0).toUpperCase() + nomeInput.slice(1);
+        msgElemento.innerText = `Olá, ${nomeFormatado}! Vamos cultivar o amanhã?`;
+    } else {
+        alert("Por favor, digite seu nome para uma experiência personalizada.");
+    }
 }
 
-// Alterna o modo escuro ao clicar no botão
-darkModeBtn.addEventListener('click', function() {
-    body.classList.toggle('dark-mode');
+// 2. Alternador de Modo Escuro (Dark Mode)
+const themeBtn = document.getElementById('theme-toggle');
+themeBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
     
-    if(body.classList.contains('dark-mode')) {
-        localStorage.setItem('dark-mode', 'true');
+    // Altera o texto do botão dinamicamente
+    if (document.body.classList.contains('dark-mode')) {
+        themeBtn.innerText = "☀️ Modo Claro";
     } else {
-        localStorage.setItem('dark-mode', 'false');
+        themeBtn.innerText = "🌓 Modo Escuro";
     }
 });
 
-// Função para abrir o modal
-function toggleModal(modalId) {
-    document.getElementById(modalId).style.display = "block";
-}
+// 3. Ajuste Dinâmico de Fonte (Melhoria para o usuário)
+const fontSlider = document.getElementById('font-slider');
+fontSlider.addEventListener('input', (e) => {
+    const size = e.target.value;
+    document.body.style.fontSize = size + "px";
+});
 
-// Função para fechar o modal
-function closeModal(modalId) {
-    document.getElementById(modalId).style.display = "none";
-}
+// 4. Manipulação de Formulário e Feedback
+const contactForm = document.getElementById('contact-form');
+const feedback = document.getElementById('form-feedback');
+
+contactForm.addEventListener('submit', (event) => {
+    event.preventDefault(); // Impede o recarregamento da página
+    
+    // Esconde o formulário e mostra mensagem de sucesso
+    contactForm.classList.add('hidden');
+    feedback.classList.remove('hidden');
+    feedback.style.color = "var(--primary)";
+    feedback.style.fontWeight = "bold";
+    
+    console.log("Formulário enviado com sucesso!");
+});
+
+// Comentário: Função para garantir navegação suave (Smooth Scroll) já nativa via CSS
