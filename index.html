@@ -3,105 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agro Forte | Futuro Sustentável</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Agro Forte - Futuro Sustentável</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
-<body id="top">
-
-    <header class="navbar">
-        <div class="container nav-content">
-            <h1 class="logo">Agro<span>Sustentável</span></h1>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#inicio">Início</a></li>
-                    <li><a href="#pilares">Pilares</a></li>
-                    <li><a href="#recursos">Recursos</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
-            </nav>
-            <div class="accessibility-controls">
-                <button id="dark-mode-toggle" title="Alternar Modo Escuro">🌓</button>
-            </div>
-        </div>
+<body>
+    <header class="cabecalho">
+        <h1 id="titulo">Agro Forte: Futuro Sustentável</h1>
+        <nav>
+            <a href="#sobre">Sobre o Agro</a>
+            <a href="#tecnologia">Tecnologia no Campo</a>
+            <a href="#meio-ambiente">Equilíbrio Ambiental</a>
+            <a href="#parceiros">Nossos Parceiros</a>
+            <a href="#contato">Contato</a>
+        </nav>
+        <button id="modo-escuro-btn">Modo Escuro</button>
     </header>
 
     <main>
-        <section id="inicio" class="hero">
-            <div class="container hero-inner">
-                <div class="hero-text">
-                    <h2 id="saudacao-dinamica">Cultivando o Amanhã</h2>
-                    <p>O equilíbrio perfeito entre a produtividade tecnológica e a regeneração da biodiversidade.</p>
-                    <div class="user-panel">
-                        <label for="input-nome">Olá, qual seu nome?</label>
-                        <div class="input-group">
-                            <input type="text" id="input-nome" placeholder="Digite aqui...">
-                            <button id="btn-personalizar" class="btn-primary">Personalizar</button>
-                        </div>
-                    </div>
-                </div>
+        <section id="sobre">
+            <h2>Sobre o Agro Forte</h2>
+            <p>O setor agropecuário é essencial para o desenvolvimento sustentável, promovendo o equilíbrio entre produção e preservação ambiental. O futuro da agricultura está na inovação e no respeito ao meio ambiente.</p>
+            <button class="external-link" data-url="https://www.agroforte.com.br">Saiba Mais</button>
+        </section>
+
+        <section id="tecnologia">
+            <h2>Tecnologia no Campo</h2>
+            <p>Com o uso de drones, sensores e outras tecnologias, o campo se conecta com o futuro, aumentando a eficiência da produção agrícola e reduzindo impactos ambientais.</p>
+            <div class="galeria">
+                <img src="https://www.example.com/imagens/drone.jpg" alt="Drone no campo">
+                <img src="https://www.example.com/imagens/sensor.jpg" alt="Sensor agrícola">
             </div>
         </section>
 
-        <section class="container font-control-box">
-            <span>Ajustar tamanho da fonte:</span>
-            <button onclick="alterarFonte('diminuir')">A-</button>
-            <button onclick="alterarFonte('aumentar')">A+</button>
+        <section id="meio-ambiente">
+            <h2>Equilíbrio Ambiental</h2>
+            <p>Garantir a sustentabilidade é a chave para o futuro. Projetos agropecuários responsáveis ajudam na preservação dos recursos naturais, como água e solo.</p>
+            <button class="external-link" data-url="https://www.sustentabilidade.com.br">Leia mais sobre Sustentabilidade</button>
         </section>
 
-        <section id="pilares" class="container secao">
-            <h2 class="titulo-secao">Nossos Pilares</h2>
-            <div class="grid-pilares">
-                <article class="card">
-                    <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=400" alt="Plantação Sustentável">
-                    <h3>Produção Consciente</h3>
-                    <p>Utilização de bioinsumos e manejo integrado de pragas para solos mais vivos.</p>
-                    <a href="https://www.embrapa.br/tema-agricultura-sustentavel" target="_blank" class="btn-externo">Saiba mais na Embrapa</a>
-                </article>
-
-                <article class="card">
-                    <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?q=80&w=400" alt="Energia Limpa no Campo">
-                    <h3>Energia Renovável</h3>
-                    <p>O campo como matriz de energia limpa através da biomassa e energia solar.</p>
-                    <a href="https://www.gov.br/mme/pt-br" target="_blank" class="btn-externo">Políticas de Energia</a>
-                </article>
-
-                <article class="card">
-                    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=400" alt="Tecnologia Verde">
-                    <h3>Agro 5.0</h3>
-                    <p>Drones e IA monitorando a saúde das florestas e lavouras em tempo real.</p>
-                    <a href="https://www.fao.org/home/en" target="_blank" class="btn-externo">Visão Global FAO</a>
-                </article>
+        <section id="parceiros">
+            <h2>Conheça nossos Parceiros</h2>
+            <p>Trabalhamos com empresas e instituições comprometidas com a inovação tecnológica e o meio ambiente.</p>
+            <div class="galeria">
+                <img src="https://www.example.com/imagens/parceiro1.jpg" alt="Parceiro 1">
+                <img src="https://www.example.com/imagens/parceiro2.jpg" alt="Parceiro 2">
             </div>
         </section>
 
-        <section id="contato" class="container secao-contato">
-            <div class="form-box">
-                <h2>Faça parte da mudança</h2>
-                <form id="form-sustentavel">
-                    <div class="input-field">
-                        <label for="email">Seu melhor E-mail:</label>
-                        <input type="email" id="email" required placeholder="exemplo@email.com">
-                    </div>
-                    <div class="input-field">
-                        <label for="interesse">Área de interesse:</label>
-                        <select id="interesse">
-                            <option value="tecnologia">Tecnologia no Campo</option>
-                            <option value="preservacao">Preservação Ambiental</option>
-                            <option value="educacao">Educação (Agrinho)</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="btn-submit">Enviar Interesse</button>
-                </form>
-                <div id="feedback-form" class="hidden">Obrigado! Entraremos em contato em breve.</div>
-            </div>
+        <section id="contato">
+            <h2>Entre em Contato</h2>
+            <form id="form-contato">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
         </section>
     </main>
 
     <footer class="rodape">
-        <p>&copy; 2026 - Projeto Agrinho | Agro Forte, Mundo Sustentável</p>
-        <p>Desenvolvido com foco em inovação e meio ambiente.</p>
+        <p>&copy; 2025 - Agro Forte | Todos os direitos reservados.</p>
     </footer>
-
-    <script src="js/script.js"></script>
 </body>
 </html>
