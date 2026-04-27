@@ -3,38 +3,30 @@ document.getElementById('modo-escuro').addEventListener('click', () => {
     document.body.classList.toggle('modo-escuro');
 });
 
-// Exibir/Esconder Detalhes (Correção do erro de primeiro clique)
-function toggleDiv() {
-    const div = document.getElementById('detalhes');
-    if (div.style.display === 'block') {
-        div.style.display = 'none';
-    } else {
-        div.style.display = 'block';
-    }
-}
-
 // Envio de Formulário
 function handleSubmit(event) {
     event.preventDefault();
     const nome = document.getElementById('nome').value;
-    alert(`Obrigado, ${nome}! Recebemos sua mensagem.`);
+    alert(`Obrigado, ${nome}! Sua mensagem foi enviada (simulação).`);
     event.target.reset();
 }
 
-// Gráfico (Inicia após carregar a página)
+// Inicialização do Gráfico
 const ctx = document.getElementById('graficoImpacto').getContext('2d');
 new Chart(ctx, {
     type: 'bar',
     data: {
         labels: ['Convencional', 'Sustentável'],
         datasets: [{
-            label: 'Emissão de CO2 (ton)',
+            label: 'Emissão de CO2 (Toneladas)',
             data: [1500, 200],
-            backgroundColor: ['#ff6347', '#28a745']
+            backgroundColor: ['#d9534f', '#28a745']
         }]
     },
     options: {
         responsive: true,
-        scales: { y: { beginAtZero: true } }
+        plugins: {
+            legend: { display: false }
+        }
     }
 });
