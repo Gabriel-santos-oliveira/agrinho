@@ -1,20 +1,23 @@
-# Agro Forte, Futuro Sustentável
+# Agro Forte, Futuro Sustentável 🌱
 
-## Objetivo
-Este projeto visa demonstrar a importância do equilíbrio entre produção agrícola e preservação do meio ambiente. Com o uso de tecnologias sustentáveis, é possível manter a produção agropecuária sem comprometer o futuro do planeta.
+Este projeto foi desenvolvido para o tema **Agrinho**, com o objetivo de conscientizar sobre o equilíbrio entre a alta produtividade agrícola e a preservação do meio ambiente.
 
-## Tecnologias Utilizadas
-- **HTML**: Para estruturar a página e interatividade.
-- **CSS**: Para o design e responsividade.
-- **JavaScript**: Para manipular o DOM e melhorar a experiência do usuário.
+## 🚀 Tecnologias Utilizadas
+- **HTML5**: Estrutura semântica.
+- **CSS3**: Layout com Flexbox/Grid e Media Queries para responsividade.
+- **JavaScript**: Manipulação de DOM, variáveis e lógica de interface.
+- **Google Fonts & Unsplash**: Recursos visuais.
 
-## Instruções de Uso
-1. Clone o repositório.
-2. Abra o arquivo `index.html` em seu navegador.
-3. Explore as seções sobre produção, meio ambiente e contato.
-4. Use o botão de "Modo Escuro" para alternar entre temas claros e escuros.
+## 🛠️ Funcionalidades
+- **Saudação Personalizada**: O usuário insere seu nome e a página interage diretamente.
+- **Modo Escuro**: Alternância de tema para melhor conforto visual.
+- **Acessibilidade**: Controle de tamanho de fonte via slider.
+- **Responsividade**: Layout adaptável para dispositivos móveis.
+- **Interatividade**: Cards com efeitos hover e links externos curados.
 
-## Como Contribuir
-1. Faça um fork deste repositório.
-2. Crie uma branch para suas modificações.
-3. Submeta um Pull Request com suas melhorias.
+## 📁 Organização
+- `/css`: Estilos do projeto.
+- `/js`: Lógica de interação.
+- `/assets`: Imagens e ícones customizados via Canva.
+
+**Desenvolvido por: [Seu Nome]**
