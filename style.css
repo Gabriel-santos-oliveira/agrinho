@@ -1,20 +1,24 @@
-/* Variáveis para fácil manutenção e Modo Escuro */
+/* Variáveis de Cor - O segredo do Modo Escuro */
 :root {
-    --primary: #2d6a4f;
-    --secondary: #95d5b2;
-    --dark: #1b4332;
-    --light: #f8f9fa;
-    --text: #333;
-    --transition: all 0.3s ease;
+    --bg-body: #fdfdfd;
+    --bg-card: #ffffff;
+    --text-main: #2d3436;
+    --primary-color: #27ae60;
+    --secondary-color: #2ecc71;
+    --header-footer: #1b4332;
+    --transition-speed: 0.4s;
 }
 
-.dark-mode {
-    --primary: #52b788;
-    --light: #121212;
-    --text: #f8f9fa;
-    --dark: #d8f3dc;
+/* Classe aplicada via JavaScript */
+body.dark-mode {
+    --bg-body: #121212;
+    --bg-card: #1e1e1e;
+    --text-main: #f5f6fa;
+    --primary-color: #52b788;
+    --header-footer: #081c15;
 }
 
+/* Reset Básico */
 * {
     margin: 0;
     padding: 0;
@@ -22,11 +26,11 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--light);
-    color: var(--text);
-    transition: var(--transition);
-    line-height: 1.6;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    transition: background var(--transition-speed), color var(--transition-speed);
+    overflow-x: hidden;
 }
 
 .container {
@@ -35,13 +39,14 @@ body {
     padding: 0 20px;
 }
 
-/* Navegação */
+/* Cabeçalho Navegação */
 header {
-    background: var(--primary);
-    padding: 1rem 0;
+    background-color: var(--header-footer);
+    padding: 15px 0;
+    color: white;
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 100;
 }
 
 nav {
@@ -50,10 +55,8 @@ nav {
     align-items: center;
 }
 
-.logo {
-    color: white;
-    font-size: 1.5rem;
-    font-weight: bold;
+.logo span {
+    color: var(--secondary-color);
 }
 
 .nav-links {
@@ -65,95 +68,300 @@ nav {
 .nav-links a {
     color: white;
     text-decoration: none;
-    transition: var(--transition);
-}
-
-.nav-links a:hover {
-    color: var(--secondary);
+    font-weight: 500;
 }
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80');
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80');
     background-size: cover;
-    height: 60vh;
+    background-position: center;
+    height: 70vh;
     display: flex;
     align-items: center;
+    justify-content: center;
     color: white;
     text-align: center;
 }
 
-.user-input {
-    margin-top: 20px;
+.user-interaction {
+    margin-top: 30px;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    border-radius: 10px;
 }
 
-input[type="text"], input[type="email"] {
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+input {
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: none;
 }
 
 /* Grid de Cards */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
-    margin-top: 40px;
+    margin: 40px 0;
 }
 
 .card {
-    background: white;
+    background-color: var(--bg-card);
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
-    color: #333;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-8px);
+    border-bottom: 4px solid var(--primary-color);
 }
 
 .card img {
     width: 100%;
     border-radius: 8px;
-    margin-bottom: 15px;
+    height: 180px;
+    object-fit: cover;
 }
 
-/* Botões Customizados */
+/* Botões */
 .btn-primary {
-    background: var(--primary);
+    background-color: var(--primary-color);
     color: white;
-    padding: 10px 20px;
     border: none;
-    border-radius: 5px;
+    padding: 10px 20px;
     cursor: pointer;
-    transition: background 0.3s;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
 .btn-primary:hover {
-    background: var(--dark);
+    filter: brightness(1.2);
 }
 
-.link-btn {
-    display: inline-block;
-    margin-top: 15px;
-    color: var(--primary);
-    text-decoration: none;
+.btn-secondary {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 5px 15px;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+/* Formulário e Controles */
+.config-panel {
+    background-color: var(--bg-card);
+    padding: 40px;
+    border-radius: 15px;
+    margin-bottom: 50px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.hidden-msg {
+    display: none;
+    margin-top: 20px;
+    color: var(--primary-color);
     font-weight: bold;
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
-    .nav-links {
-        display: none; /* Simplificação para mobile */
-    }
-    
-    .hero h1 {
-        font-size: 1.8rem;
-    }
+    .nav-links { display: none; }
+    .input-group { flex-direction: column; }
+}/* Variáveis de Cor - O segredo do Modo Escuro */
+:root {
+    --bg-body: #fdfdfd;
+    --bg-card: #ffffff;
+    --text-main: #2d3436;
+    --primary-color: #27ae60;
+    --secondary-color: #2ecc71;
+    --header-footer: #1b4332;
+    --transition-speed: 0.4s;
 }
 
-.hidden {
+/* Classe aplicada via JavaScript */
+body.dark-mode {
+    --bg-body: #121212;
+    --bg-card: #1e1e1e;
+    --text-main: #f5f6fa;
+    --primary-color: #52b788;
+    --header-footer: #081c15;
+}
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    transition: background var(--transition-speed), color var(--transition-speed);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Cabeçalho Navegação */
+header {
+    background-color: var(--header-footer);
+    padding: 15px 0;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo span {
+    color: var(--secondary-color);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.user-interaction {
+    margin-top: 30px;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+input {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+/* Grid de Cards */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.card {
+    background-color: var(--bg-card);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-bottom: 4px solid var(--primary-color);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 8px;
+    height: 180px;
+    object-fit: cover;
+}
+
+/* Botões */
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    filter: brightness(1.2);
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 5px 15px;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+/* Formulário e Controles */
+.config-panel {
+    background-color: var(--bg-card);
+    padding: 40px;
+    border-radius: 15px;
+    margin-bottom: 50px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.hidden-msg {
     display: none;
+    margin-top: 20px;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    .input-group { flex-direction: column; }
 }
