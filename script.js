@@ -1,51 +1,56 @@
-// 1. Variáveis e Manipulação de DOM para Saudação
+// --- 1. LÓGICA DE SAUDAÇÃO PERSONALIZADA ---
 function personalizarSaudacao() {
-    const nomeInput = document.getElementById('user-name').value;
-    const msgElemento = document.getElementById('welcome-msg');
-    
-    if (nomeInput.trim() !== "") {
-        // Processa a informação antes de exibir
-        const nomeFormatado = nomeInput.charAt(0).toUpperCase() + nomeInput.slice(1);
-        msgElemento.innerText = `Olá, ${nomeFormatado}! Vamos cultivar o amanhã?`;
+    // Armazena o valor do input em uma variável
+    const nome = document.getElementById('user-name').value;
+    const saudacaoDisplay = document.getElementById('welcome-msg');
+
+    if (nome.trim() !== "") {
+        // Processa a informação (deixa em maiúsculo)
+        const nomeLimpo = nome.toUpperCase();
+        // Manipula o DOM para atualizar o texto na tela
+        saudacaoDisplay.innerText = `Olá, ${nomeLimpo}! Você faz parte do futuro!`;
     } else {
-        alert("Por favor, digite seu nome para uma experiência personalizada.");
+        alert("Por favor, diga-nos o seu nome!");
     }
 }
 
-// 2. Alternador de Modo Escuro (Dark Mode)
+// --- 2. LÓGICA DO MODO ESCURO (CORRIGIDA) ---
 const themeBtn = document.getElementById('theme-toggle');
+
 themeBtn.addEventListener('click', () => {
+    // Alterna a classe dark-mode no body
     document.body.classList.toggle('dark-mode');
     
-    // Altera o texto do botão dinamicamente
+    // Altera o texto do botão para feedback visual
     if (document.body.classList.contains('dark-mode')) {
         themeBtn.innerText = "☀️ Modo Claro";
+        console.log("Modo Escuro Ativado");
     } else {
         themeBtn.innerText = "🌓 Modo Escuro";
+        console.log("Modo Claro Ativado");
     }
 });
 
-// 3. Ajuste Dinâmico de Fonte (Melhoria para o usuário)
+// --- 3. AJUSTE DE TAMANHO DE FONTE ---
 const fontSlider = document.getElementById('font-slider');
-fontSlider.addEventListener('input', (e) => {
-    const size = e.target.value;
-    document.body.style.fontSize = size + "px";
+
+fontSlider.addEventListener('input', (event) => {
+    const novoTamanho = event.target.value + "px";
+    // Altera o estilo diretamente no elemento body
+    document.body.style.fontSize = novoTamanho;
 });
 
-// 4. Manipulação de Formulário e Feedback
-const contactForm = document.getElementById('contact-form');
+// --- 4. MANIPULAÇÃO DE FORMULÁRIO ---
+const form = document.getElementById('contact-form');
 const feedback = document.getElementById('form-feedback');
 
-contactForm.addEventListener('submit', (event) => {
-    event.preventDefault(); // Impede o recarregamento da página
+form.addEventListener('submit', (e) => {
+    // Impede a página de recarregar (Comportamento padrão)
+    e.preventDefault();
     
-    // Esconde o formulário e mostra mensagem de sucesso
-    contactForm.classList.add('hidden');
-    feedback.classList.remove('hidden');
-    feedback.style.color = "var(--primary)";
-    feedback.style.fontWeight = "bold";
+    // Esconde o formulário e mostra a div de agradecimento
+    form.style.display = "none";
+    feedback.style.display = "block";
     
-    console.log("Formulário enviado com sucesso!");
+    console.log("Dados de contato enviados!");
 });
-
-// Comentário: Função para garantir navegação suave (Smooth Scroll) já nativa via CSS
