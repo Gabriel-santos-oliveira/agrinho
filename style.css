@@ -1,73 +1,16 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
-}
-
-header {
-    background-color: #006400;
-    padding: 20px;
-    text-align: center;
-}
-
-header nav ul {
-    list-style: none;
-}
-
-header nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-header nav ul li a {
-    text-decoration: none;
-    color: white;
-}
-
-button {
-    padding: 10px 15px;
-    background-color: #008000;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-button:hover {
-    background-color: #004d00;
-}
-
-#modo-escuro {
-    margin-top: 20px;
-}
-
-section {
-    padding: 20px;
-    margin: 10px;
-}
-
-#impacto img {
-    width: 100%;
-    max-width: 600px;
-    height: auto;
-    margin-top: 20px;
-}
-
-#detalhes {
-    background-color: #e7f7e7;
-    padding: 15px;
-    margin-top: 15px;
-}
-
-footer {
-    text-align: center;
-    padding: 10px;
+.modo-escuro {
     background-color: #333;
     color: white;
+}
+
+.modo-escuro header {
+    background-color: #222;
+}
+
+.modo-escuro button {
+    background-color: #555;
+}
+
+.modo-escuro button:hover {
+    background-color: #222;
 }
