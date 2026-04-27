@@ -1,125 +1,159 @@
-/* Estilos Gerais */
-body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    transition: background-color 0.3s ease, color 0.3s ease;
+/* Variáveis para fácil manutenção e Modo Escuro */
+:root {
+    --primary: #2d6a4f;
+    --secondary: #95d5b2;
+    --dark: #1b4332;
+    --light: #f8f9fa;
+    --text: #333;
+    --transition: all 0.3s ease;
 }
 
+.dark-mode {
+    --primary: #52b788;
+    --light: #121212;
+    --text: #f8f9fa;
+    --dark: #d8f3dc;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--light);
+    color: var(--text);
+    transition: var(--transition);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navegação */
 header {
-    background-color: #f1f1f1;
-    padding: 20px;
+    background: var(--primary);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-header nav ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-header nav ul li {
-    display: inline-block;
-    margin-right: 20px;
-}
-
-header nav ul li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: 600;
-}
-
-button {
-    padding: 10px 20px;
-    background-color: #4CAF50;
+.logo {
     color: white;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
-button:hover {
-    background-color: #45a049;
-}
-
-.hero-section {
-    background-image: url('assets/img/agriculture.jpg');
-    background-size: cover;
-    height: 300px;
+.nav-links {
     display: flex;
-    justify-content: center;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--secondary);
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80');
+    background-size: cover;
+    height: 60vh;
+    display: flex;
     align-items: center;
     color: white;
     text-align: center;
 }
 
-.hero-content h1 {
-    font-size: 3em;
+.user-input {
+    margin-top: 20px;
 }
 
-.info-section {
-    padding: 40px;
-    background-color: #fff;
+input[type="text"], input[type="email"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Grid de Cards */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
     color: #333;
-    text-align: center;
 }
 
-.info-section h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
+.card:hover {
+    transform: translateY(-10px);
 }
 
-.info-section a {
-    color: #1e90ff;
-    text-decoration: none;
-}
-
-.info-section a:hover {
-    color: #00bfff;
-}
-
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
+.card img {
     width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    justify-content: center;
-    align-items: center;
+    border-radius: 8px;
+    margin-bottom: 15px;
 }
 
-.modal-content {
-    background-color: white;
-    padding: 20px;
-    width: 80%;
-    max-width: 600px;
-    text-align: left;
-}
-
-.close-btn {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 30px;
+/* Botões Customizados */
+.btn-primary {
+    background: var(--primary);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
+    transition: background 0.3s;
 }
 
-footer {
-    background-color: #f1f1f1;
-    padding: 20px;
-    text-align: center;
+.btn-primary:hover {
+    background: var(--dark);
 }
 
+.link-btn {
+    display: inline-block;
+    margin-top: 15px;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Responsividade */
 @media (max-width: 768px) {
-    header nav ul {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    .nav-links {
+        display: none; /* Simplificação para mobile */
     }
-    .hero-content h1 {
-        font-size: 2em;
+    
+    .hero h1 {
+        font-size: 1.8rem;
     }
+}
+
+.hidden {
+    display: none;
 }
