@@ -1,79 +1,87 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agro Forte, Futuro Sustentável</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <title>Agro Forte | Futuro Sustentável</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
     <header>
-        <div class="logo">
-            <img src="assets/img/logo.png" alt="Agro Forte Logo">
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#producao">Produção</a></li>
-                <li><a href="#meio-ambiente">Meio Ambiente</a></li>
+        <nav class="container">
+            <div class="logo">Agro<span>Sustentável</span></div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#pilares">Pilares</a></li>
                 <li><a href="#contato">Contato</a></li>
             </ul>
+            <button id="theme-toggle" class="btn-secondary">🌓 Modo Escuro</button>
         </nav>
-        <button id="darkModeBtn">Modo Escuro</button>
     </header>
 
-    <section id="hero" class="hero-section">
-        <div class="hero-content">
-            <h1>Agro Forte, Futuro Sustentável</h1>
-            <p>O agronegócio é uma das forças motrizes da economia global, mas sua sustentabilidade é fundamental para garantir o equilíbrio entre produção e preservação ambiental.</p>
-            <button onclick="scrollToSection('#sobre')">Saiba mais</button>
-        </div>
-    </section>
-
-    <section id="sobre" class="info-section">
-        <h2>O Equilíbrio entre Produção e Meio Ambiente</h2>
-        <p>A agricultura sustentável visa não apenas aumentar a produtividade, mas também preservar os recursos naturais para as gerações futuras. Isso envolve o uso eficiente de água, solo e biodiversidade. <a href="https://www.nature.org/en-us/what-we-do/our-insights/perspectives/sustainable-agriculture/" target="_blank">Leia mais sobre práticas agrícolas sustentáveis</a>.</p>
-        <p>Por exemplo, a rotação de culturas é uma técnica essencial para evitar a exaustão do solo. Além disso, tecnologias como o uso de drones e inteligência artificial ajudam a melhorar a precisão no uso de insumos e no monitoramento de colheitas.</p>
-        <button class="toggle-info-btn" onclick="toggleModal('sobreModal')">Ver mais</button>
-        <div id="sobreModal" class="modal">
-            <div class="modal-content">
-                <span class="close-btn" onclick="closeModal('sobreModal')">&times;</span>
-                <h3>Práticas Sustentáveis Detalhadas</h3>
-                <p>A agricultura regenerativa, por exemplo, é uma abordagem que visa restaurar a saúde do solo e aumentar a biodiversidade. Ela pode envolver a integração de plantas nativas e a preservação de ecossistemas locais.</p>
-                <p>Para um estudo completo, consulte o artigo publicado por <a href="https://www.un.org/sustainabledevelopment/sustainable-consumption-production/" target="_blank">as Nações Unidas sobre Consumo e Produção Sustentáveis</a>.</p>
+    <main>
+        <section id="inicio" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 id="welcome-msg">Bem-vindo ao Futuro do Agro</h1>
+                    <p>Equilibrando a produtividade do campo com a preservação ambiental através da tecnologia.</p>
+                    <div class="user-input">
+                        <input type="text" id="user-name" placeholder="Digite seu nome">
+                        <button onclick="personalizarSaudacao()" class="btn-primary">Personalizar</button>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="producao" class="info-section">
-        <h2>Produção Agropecuária Sustentável</h2>
-        <p>A produção agropecuária é um pilar fundamental para a segurança alimentar global. No entanto, os métodos tradicionais de cultivo e pecuária podem ter sérios impactos ambientais, incluindo desmatamento, degradação do solo e aumento das emissões de gases de efeito estufa. <a href="https://www.wfp.org/food-systems" target="_blank">Veja o impacto da produção de alimentos em sistemas sustentáveis</a>.</p>
-        <p>Por isso, práticas como a integração lavoura-pecuária-floresta (ILPF) estão ganhando destaque. Essas técnicas permitem que diferentes tipos de uso da terra coexistam de maneira produtiva e ambientalmente responsável.</p>
-        <button onclick="window.location.href='https://www.greenpeace.org.br/como-agir/sustentabilidade-na-agricultura/';">Saiba mais sobre práticas agropecuárias sustentáveis</button>
-    </section>
+        <section id="pilares" class="container section">
+            <h2 class="text-center">Nossos Pilares</h2>
+            <div class="grid">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&w=400&q=80" alt="Tecnologia no Campo">
+                    <h3>Tecnologia de Precisão</h3>
+                    <p>Uso de drones e sensores para reduzir o desperdício de insumos.</p>
+                    <a href="https://www.embrapa.br/tema-agricultura-de-precisao" target="_blank" class="link-btn">Saiba Mais →</a>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=400&q=80" alt="Preservação">
+                    <h3>Preservação Hídrica</h3>
+                    <p>Sistemas inteligentes de irrigação que economizam até 40% de água.</p>
+                    <a href="https://www.fao.org/land-water/en/" target="_blank" class="link-btn">Fontes FAO →</a>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=400&q=80" alt="Energia Limpa">
+                    <h3>Energia Limpa</h3>
+                    <p>O campo como gerador de energia solar e biomassa sustentável.</p>
+                    <a href="https://www.gov.br/mme/pt-br" target="_blank" class="link-btn">Políticas Públicas →</a>
+                </div>
+            </div>
+        </section>
 
-    <section id="meio-ambiente" class="info-section">
-        <h2>Impacto Ambiental e Soluções</h2>
-        <p>Além das práticas agrícolas sustentáveis, tecnologias como a agricultura de precisão e o uso de biotecnologia têm sido fundamentais para reduzir os impactos ambientais. A agricultura de precisão, por exemplo, utiliza sensores e dados para otimizar o uso de recursos naturais.</p>
-        <div class="video">
-            <h3>Vídeo: Inovações na Agricultura Sustentável</h3>
-            <iframe width="100%" height="315" src="https://www.youtube.com/embed/6S9uJdPB4JY" title="Agricultura Sustentável: Soluções Inovadoras" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <p>Esse vídeo explora as inovações tecnológicas que estão ajudando a reduzir a pegada ambiental da agricultura. Assista e descubra como a tecnologia pode transformar a agricultura em um setor mais verde e eficiente.</p>
-    </section>
+        <section id="contato" class="container section">
+            <div class="contact-box">
+                <h3>Faça parte dessa mudança</h3>
+                <form id="contact-form">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" required>
+                    
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" required>
 
-    <footer id="contato">
-        <h3>Entre em contato</h3>
-        <form id="form-contato">
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" required>
-            <label for="mensagem">Mensagem:</label>
-            <textarea id="mensagem" name="mensagem" required></textarea>
-            <button type="submit">Enviar</button>
-        </form>
+                    <label for="font-size">Ajustar Tamanho da Fonte:</label>
+                    <input type="range" id="font-slider" min="14" max="24" value="16">
+                    
+                    <button type="submit" class="btn-primary">Enviar Interesse</button>
+                </form>
+                <div id="form-feedback" class="hidden">Obrigado! Entraremos em contato.</div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Projeto Agrinho - Desenvolvimento Sustentável. Feito com ❤️ e Código.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
