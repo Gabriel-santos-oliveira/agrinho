@@ -1,13 +1,18 @@
-// Aguarda carregamento do DOM
+// ==========================
+// INICIALIZAÇÃO SEGURA
+// ==========================
 document.addEventListener("DOMContentLoaded", () => {
 
 ```
+console.log("JS funcionando");
+
 let tamanho = 16;
 
 const aumentar = document.getElementById("increase-font");
 const diminuir = document.getElementById("decrease-font");
 const dark = document.getElementById("dark-mode");
 
+// BOTÕES
 if (aumentar) {
     aumentar.addEventListener("click", () => {
         tamanho += 2;
@@ -35,30 +40,42 @@ iniciarContadores();
 
 });
 
-// Saudação
+// ==========================
+// SAUDAÇÃO
+// ==========================
 function saudacao() {
-const nome = document.getElementById("nome").value.trim();
+const nomeInput = document.getElementById("nome");
 const msg = document.getElementById("mensagem");
 
 ```
+if (!nomeInput || !msg) return;
+
+const nome = nomeInput.value.trim();
+
 if (nome.length > 2) {
     msg.textContent = `Olá, ${nome}! 🌱`;
+    msg.style.color = "green";
 } else {
     msg.textContent = "Digite um nome válido.";
+    msg.style.color = "red";
 }
 ```
 
 }
 
-// Simulação
+// ==========================
+// SIMULADOR
+// ==========================
 function simular() {
-const tipo = document.getElementById("tipo").value;
+const tipo = document.getElementById("tipo");
 const res = document.getElementById("resultado");
 
 ```
-if (tipo === "convencional") {
+if (!tipo || !res) return;
+
+if (tipo.value === "convencional") {
     res.textContent = "Alta produção, porém maior impacto ambiental.";
-} else if (tipo === "sustentavel") {
+} else if (tipo.value === "sustentavel") {
     res.textContent = "Equilíbrio entre produção e preservação.";
 } else {
     res.textContent = "Escolha uma opção.";
@@ -67,12 +84,16 @@ if (tipo === "convencional") {
 
 }
 
-// Abrir links
+// ==========================
+// LINKS
+// ==========================
 function abrir(url) {
 window.open(url, "_blank", "noopener");
 }
 
-// Contador animado
+// ==========================
+// CONTADOR FUNCIONAL
+// ==========================
 function animar(id, valor) {
 const el = document.getElementById(id);
 if (!el) return;
