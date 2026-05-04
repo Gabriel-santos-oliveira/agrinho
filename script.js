@@ -1,18 +1,14 @@
-// ==========================
-// INICIALIZAÇÃO SEGURA
-// ==========================
+// Executa após carregar a página
 document.addEventListener("DOMContentLoaded", () => {
 
 ```
-console.log("JS funcionando");
-
 let tamanho = 16;
 
 const aumentar = document.getElementById("increase-font");
 const diminuir = document.getElementById("decrease-font");
 const dark = document.getElementById("dark-mode");
 
-// BOTÕES
+// Aumentar fonte
 if (aumentar) {
     aumentar.addEventListener("click", () => {
         tamanho += 2;
@@ -20,6 +16,7 @@ if (aumentar) {
     });
 }
 
+// Diminuir fonte
 if (diminuir) {
     diminuir.addEventListener("click", () => {
         if (tamanho > 12) {
@@ -29,6 +26,7 @@ if (diminuir) {
     });
 }
 
+// Modo escuro
 if (dark) {
     dark.addEventListener("click", () => {
         document.body.classList.toggle("dark");
@@ -40,43 +38,31 @@ iniciarContadores();
 
 });
 
-// ==========================
-// SAUDAÇÃO
-// ==========================
+// Saudação
 function saudacao() {
-const nomeInput = document.getElementById("nome");
+const nome = document.getElementById("nome").value.trim();
 const msg = document.getElementById("mensagem");
 
 ```
-if (!nomeInput || !msg) return;
-
-const nome = nomeInput.value.trim();
-
 if (nome.length > 2) {
     msg.textContent = `Olá, ${nome}! 🌱`;
-    msg.style.color = "green";
 } else {
     msg.textContent = "Digite um nome válido.";
-    msg.style.color = "red";
 }
 ```
 
 }
 
-// ==========================
-// SIMULADOR
-// ==========================
+// Simulador
 function simular() {
-const tipo = document.getElementById("tipo");
+const tipo = document.getElementById("tipo").value;
 const res = document.getElementById("resultado");
 
 ```
-if (!tipo || !res) return;
-
-if (tipo.value === "convencional") {
-    res.textContent = "Alta produção, porém maior impacto ambiental.";
-} else if (tipo.value === "sustentavel") {
-    res.textContent = "Equilíbrio entre produção e preservação.";
+if (tipo === "convencional") {
+    res.textContent = "Alta produção, maior impacto ambiental.";
+} else if (tipo === "sustentavel") {
+    res.textContent = "Produção equilibrada com preservação ambiental.";
 } else {
     res.textContent = "Escolha uma opção.";
 }
@@ -84,16 +70,12 @@ if (tipo.value === "convencional") {
 
 }
 
-// ==========================
-// LINKS
-// ==========================
+// Abrir links externos
 function abrir(url) {
 window.open(url, "_blank", "noopener");
 }
 
-// ==========================
-// CONTADOR FUNCIONAL
-// ==========================
+// Contador
 function animar(id, valor) {
 const el = document.getElementById(id);
 if (!el) return;
@@ -116,7 +98,9 @@ const intervalo = setInterval(() => {
 
 }
 
+// Inicia contadores
 function iniciarContadores() {
 animar("co2", 5000);
 animar("agua", 100000);
 }
+
