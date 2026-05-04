@@ -4,70 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agro Forte - Futuro Sustentável</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header id="inicio">
-        <div class="container">
-            <h1>Agro Forte - Futuro Sustentável</h1>
-            <nav>
-                <ul>
-                    <li><a href="#inicio">Início</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#impacto">Impacto</a></li>
-                    <li><a href="#solucoes">Soluções</a></li>
-                    <li><a href="#grafico">Gráficos</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
-            </nav>
-            <button id="modo-escuro">Alternar Modo</button>
-        </div>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#producao">Produção</a></li>
+                <li><a href="#meio-ambiente">Meio Ambiente</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+        <button id="modo-escuro">Modo Escuro</button>
     </header>
 
-    <main>
-        <section id="sobre" class="section">
-            <div class="container">
-                <h2>Sobre o Projeto</h2>
-                <p>A agricultura precisa caminhar para práticas mais sustentáveis, equilibrando a produção com a preservação ambiental.</p>
-                <button onclick="window.open('https://www.embrapa.br/tema-sustentabilidade', '_blank')">Saiba Mais</button>
-            </div>
-        </section>
+    <section id="sobre">
+        <h2>Sobre o Agro Forte</h2>
+        <p>A agricultura sustentável é essencial para o futuro do nosso planeta. A proposta do Agro Forte é integrar a produção agrícola com práticas que preservam o meio ambiente e asseguram a produtividade para as futuras gerações.</p>
+        <img src="assets/img/agro-sustentavel.jpg" alt="Agricultura Sustentável">
+    </section>
 
-        <section id="impacto" class="section">
-            <div class="container">
-                <h2>Impacto Ambiental</h2>
-                <p>O desafio é reduzir as emissões sem perder a produtividade.</p>
-                <img src="img/impacto.jpg" alt="Impacto Ambiental" class="img-impacto">
-            </div>
-        </section>
+    <section id="producao">
+        <h2>Produção Sustentável</h2>
+        <p>A produção agrícola sustentável busca aumentar a produtividade sem comprometer os recursos naturais.</p>
+        <a href="https://www.exemplo.com" target="_blank"><button>Saiba Mais sobre Produção Sustentável</button></a>
+    </section>
 
-        <section id="grafico" class="section">
-            <div class="container">
-                <h2>Impacto da Agricultura: CO2</h2>
-                <div style="max-width: 600px; margin: 0 auto;">
-                    <canvas id="graficoImpacto"></canvas>
-                </div>
-            </div>
-        </section>
-
-        <section id="contato" class="section">
-            <div class="container">
-                <h2>Entre em Contato</h2>
-                <form id="form-contato" onsubmit="handleSubmit(event)">
-                    <input type="text" id="nome" placeholder="Seu Nome" required>
-                    <input type="email" id="email" placeholder="Seu Email" required>
-                    <textarea id="comentarios" rows="4" placeholder="Sua Mensagem" required></textarea>
-                    <button type="submit">Enviar</button>
-                </form>
-            </div>
-        </section>
-    </main>
+    <section id="meio-ambiente">
+        <h2>Equilíbrio com o Meio Ambiente</h2>
+        <p>O futuro sustentável depende da harmonia entre as necessidades humanas e a preservação ambiental. Inovações tecnológicas, como o uso de biotecnologia e práticas agroecológicas, são essenciais.</p>
+        <img src="assets/img/meio-ambiente.jpg" alt="Meio Ambiente">
+    </section>
 
     <footer>
-        <p>&copy; 2026 Agro Forte - Projeto Escolar Agrinho</p>
+        <p>&copy; 2026 Agro Forte. Todos os direitos reservados.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
