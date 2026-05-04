@@ -1,88 +1,89 @@
 :root {
-    --primary: #2d5a27;
-    --secondary: #8bc34a;
-    --dark: #1b1b1b;
-    --light: #f4f4f4;
-    --transition: all 0.3s ease;
+    --primary: #1b5e20;
+    --secondary: #4caf50;
+    --accent: #ffc107;
+    --light: #ffffff;
+    --dark: #212121;
+    --bg: #f9fbe7;
 }
 
-/* Modo Escuro */
 body.dark-mode {
-    --primary: #8bc34a;
-    --light: #1b1b1b;
-    --dark: #f4f4f4;
-    background-color: #121212;
-    color: white;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', sans-serif;
+    --bg: #121212;
+    --light: #1e1e1e;
+    --dark: #e0e0e0;
+    color: #e0e0e0;
 }
 
 body {
-    background-color: var(--light);
-    transition: var(--transition);
+    background-color: var(--bg);
+    transition: background 0.5s ease, font-size 0.2s ease;
+    font-size: 16px;
 }
 
-header {
-    background: var(--primary);
-    padding: 1rem 5%;
-    color: white;
+/* Layout e Containers */
+.container { padding: 20px 10%; }
+
+.nav-links button {
+    padding: 5px 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    background: var(--accent);
+    font-weight: bold;
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo span { font-weight: bold; color: var(--secondary); }
-
+/* Hero Section com Parallax Effect */
 #hero {
+    padding: 100px 5%;
     text-align: center;
-    padding: 80px 10%;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('assets/img/hero-bg.jpg');
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/img/agro-banner.jpg') fixed center;
     background-size: cover;
     color: white;
 }
 
-.btn {
-    display: inline-block;
-    padding: 12px 25px;
-    background: var(--secondary);
-    color: white;
+/* Botões Estilizados */
+.btn, .tag {
     text-decoration: none;
-    border-radius: 5px;
-    margin: 10px;
-    transition: var(--transition);
+    padding: 12px 20px;
+    margin: 5px;
+    border-radius: 30px;
+    display: inline-block;
+    transition: all 0.3s;
 }
 
-.btn:hover {
-    transform: translateY(-3px);
-    filter: brightness(1.1);
-}
+.btn { background: var(--secondary); color: white; }
+.btn.secondary { background: #388e3c; }
+.btn.info { background: #0288d1; }
+.btn:hover { transform: scale(1.05); box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
 
-.grid-container {
-    display: flex;
-    flex-wrap: wrap;
+/* Galeria */
+.grid-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
-    padding: 40px 10%;
-}
-
-.pilar-item {
-    flex: 1;
-    min-width: 300px;
-    background: white;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-    #hero h1 { font-size: 1.5rem; }
-    .grid-container { flex-direction: column; }
+.grid-images img {
+    width: 100%;
+    border-radius: 15px;
+    filter: grayscale(30%);
+    transition: 0.4s;
+}
+
+.grid-images img:hover {
+    filter: grayscale(0%);
+    transform: translateY(-10px);
+}
+
+/* Stats */
+.stats-grid {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    background: var(--primary);
+    color: white;
+    padding: 40px;
+    margin-top: -30px;
+    border-radius: 15px;
 }
