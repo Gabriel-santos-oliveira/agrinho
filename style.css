@@ -1,57 +1,78 @@
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f4f9;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
     color: #333;
-    transition: background-color 0.4s, color 0.4s;
 }
-
-.container { width: 90%; max-width: 1000px; margin: 0 auto; }
 
 header {
-    background-color: #006400;
-    padding: 20px 0;
-    color: white;
+    background-color: #28a745;
+    padding: 20px;
     text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
 }
 
-nav ul { list-style: none; padding: 15px 0; }
-nav ul li { display: inline; margin: 0 15px; }
-nav ul li a { color: white; text-decoration: none; font-weight: bold; }
-
-.section {
-    padding: 60px 20px;
-    background: white;
-    margin: 30px 0;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+nav ul {
+    list-style: none;
 }
 
-.img-impacto { width: 100%; border-radius: 10px; }
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
 
-form { display: flex; flex-direction: column; gap: 10px; }
-input, textarea { padding: 12px; border: 1px solid #ddd; border-radius: 8px; }
-
-button {
-    background: #28a745;
+nav ul li a {
     color: white;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 8px;
-    cursor: pointer;
+    text-decoration: none;
     font-weight: bold;
 }
 
-/* --- REGRAS DO MODO ESCURO --- */
-body.modo-escuro { background-color: #121212; color: #e0e0e0; }
-body.modo-escuro .section { background-color: #1e1e1e; box-shadow: 0 5px 15px rgba(255,255,255,0.05); }
-body.modo-escuro input, body.modo-escuro textarea { background: #333; color: white; border-color: #444; }
+section {
+    padding: 20px;
+    margin: 10px;
+}
 
-/* Responsividade Celular */
-@media (max-width: 600px) {
-    nav ul li { display: block; margin-bottom: 10px; }
+section img {
+    width: 100%;
+    max-width: 600px;
+    display: block;
+    margin-top: 20px;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+    nav ul {
+        text-align: center;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    section {
+        padding: 15px;
+    }
+}
+
+body.dark-mode {
+    background-color: #333;
+    color: white;
 }
