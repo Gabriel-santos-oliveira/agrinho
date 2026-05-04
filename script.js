@@ -1,82 +1,101 @@
-// Controle de fonte
+// Aguarda carregamento do DOM
+document.addEventListener("DOMContentLoaded", () => {
+
+```
 let tamanho = 16;
 
-document.getElementById("increase-font").onclick = () => {
-tamanho += 2;
-document.body.style.fontSize = tamanho + "px";
-};
+const aumentar = document.getElementById("increase-font");
+const diminuir = document.getElementById("decrease-font");
+const dark = document.getElementById("dark-mode");
 
-document.getElementById("decrease-font").onclick = () => {
-if (tamanho > 12) {
-tamanho -= 2;
-document.body.style.fontSize = tamanho + "px";
+if (aumentar) {
+    aumentar.addEventListener("click", () => {
+        tamanho += 2;
+        document.body.style.fontSize = tamanho + "px";
+    });
 }
-};
 
-// Modo escuro
-document.getElementById("dark-mode").onclick = () => {
-document.body.classList.toggle("dark");
-};
+if (diminuir) {
+    diminuir.addEventListener("click", () => {
+        if (tamanho > 12) {
+            tamanho -= 2;
+            document.body.style.fontSize = tamanho + "px";
+        }
+    });
+}
 
-// Saudação personalizada
+if (dark) {
+    dark.addEventListener("click", () => {
+        document.body.classList.toggle("dark");
+    });
+}
+
+iniciarContadores();
+```
+
+});
+
+// Saudação
 function saudacao() {
-let nome = document.getElementById("nome").value;
-let msg = document.getElementById("mensagem");
+const nome = document.getElementById("nome").value.trim();
+const msg = document.getElementById("mensagem");
 
 ```
 if (nome.length > 2) {
-    msg.innerText = "Olá, " + nome + "! 🌱";
+    msg.textContent = `Olá, ${nome}! 🌱`;
 } else {
-    msg.innerText = "Digite um nome válido.";
+    msg.textContent = "Digite um nome válido.";
 }
 ```
 
 }
 
-// Simulador
+// Simulação
 function simular() {
-let tipo = document.getElementById("tipo").value;
-let res = document.getElementById("resultado");
+const tipo = document.getElementById("tipo").value;
+const res = document.getElementById("resultado");
 
 ```
 if (tipo === "convencional") {
-    res.innerText = "Alta produção, porém maior impacto ambiental.";
+    res.textContent = "Alta produção, porém maior impacto ambiental.";
 } else if (tipo === "sustentavel") {
-    res.innerText = "Equilíbrio entre produção e preservação ambiental.";
+    res.textContent = "Equilíbrio entre produção e preservação.";
 } else {
-    res.innerText = "Escolha uma opção.";
+    res.textContent = "Escolha uma opção.";
 }
 ```
 
 }
 
-// Abrir links externos
-function abrir(link) {
-window.open(link, "_blank");
+// Abrir links
+function abrir(url) {
+window.open(url, "_blank", "noopener");
 }
 
 // Contador animado
-function contador(id, valor) {
-let el = document.getElementById(id);
-let atual = 0;
+function animar(id, valor) {
+const el = document.getElementById(id);
+if (!el) return;
 
 ```
-let intervalo = setInterval(() => {
-    atual += valor / 100;
+let atual = 0;
+const incremento = Math.ceil(valor / 100);
+
+const intervalo = setInterval(() => {
+    atual += incremento;
 
     if (atual >= valor) {
-        el.innerText = valor;
+        el.textContent = valor.toLocaleString();
         clearInterval(intervalo);
     } else {
-        el.innerText = Math.floor(atual);
+        el.textContent = atual.toLocaleString();
     }
 }, 30);
 ```
 
 }
 
-// Inicialização
-window.onload = () => {
-contador("co2", 5000);
-contador("agua", 100000);
-};
+function iniciarContadores() {
+animar("co2", 5000);
+animar("agua", 100000);
+}
