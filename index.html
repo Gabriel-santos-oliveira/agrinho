@@ -3,44 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agro Forte - Futuro Sustentável</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Agro Sustentável | Futuro Forte</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <nav>
-            <ul>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#producao">Produção</a></li>
-                <li><a href="#meio-ambiente">Meio Ambiente</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
+            <div class="logo">Agro<span>Sustentável</span></div>
+            <button id="theme-toggle">Alternar Modo</button>
         </nav>
-        <button id="modo-escuro">Modo Escuro</button>
     </header>
 
-    <section id="sobre">
-        <h2>Sobre o Agro Forte</h2>
-        <p>A agricultura sustentável é essencial para o futuro do nosso planeta. A proposta do Agro Forte é integrar a produção agrícola com práticas que preservam o meio ambiente e asseguram a produtividade para as futuras gerações.</p>
-        <img src="assets/img/agro-sustentavel.jpg" alt="Agricultura Sustentável">
-    </section>
+    <main>
+        <section id="hero">
+            <h1>Equilíbrio entre Produção e Meio Ambiente</h1>
+            <p>O futuro da agricultura depende da harmonia entre a tecnologia no campo e a preservação da natureza.</p>
+            <div class="cta-buttons">
+                <a href="https://www.embrapa.br/" target="_blank" class="btn">Conhecer Embrapa</a>
+                <a href="https://www.fao.org/home/en" target="_blank" class="btn secondary">FAO Global</a>
+            </div>
+        </section>
 
-    <section id="producao">
-        <h2>Produção Sustentável</h2>
-        <p>A produção agrícola sustentável busca aumentar a produtividade sem comprometer os recursos naturais.</p>
-        <a href="https://www.exemplo.com" target="_blank"><button>Saiba Mais sobre Produção Sustentável</button></a>
-    </section>
+        <section id="interacao">
+            <div class="card">
+                <h2>Olá, produtor!</h2>
+                <p>Como devemos te chamar?</p>
+                <div class="form-group">
+                    <input type="text" id="user-name" placeholder="Digite seu nome...">
+                    <button onclick="boasVindas()">Personalizar</button>
+                </div>
+                <p id="welcome-message"></p>
+            </div>
+        </section>
 
-    <section id="meio-ambiente">
-        <h2>Equilíbrio com o Meio Ambiente</h2>
-        <p>O futuro sustentável depende da harmonia entre as necessidades humanas e a preservação ambiental. Inovações tecnológicas, como o uso de biotecnologia e práticas agroecológicas, são essenciais.</p>
-        <img src="assets/img/meio-ambiente.jpg" alt="Meio Ambiente">
-    </section>
+        <section id="pilares" class="grid-container">
+            <div class="pilar-item" id="pilar-1">
+                <img src="assets/img/tecnologia.jpg" alt="Drone sobrevoando plantação">
+                <h3>Tecnologia de Precisão</h3>
+                <p>Redução de insumos e desperdício através de dados reais.</p>
+            </div>
+            <div class="pilar-item" id="pilar-2">
+                <img src="assets/img/preservacao.jpg" alt="Mata ciliar preservada">
+                <h3>Preservação Ativa</h3>
+                <p>Recuperação de nascentes e manutenção de matas ciliares.</p>
+            </div>
+        </section>
+    </main>
 
     <footer>
-        <p>&copy; 2026 Agro Forte. Todos os direitos reservados.</p>
+        <p>&copy; 2024 Projeto Agrinho - Cultivando Conhecimento</p>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
