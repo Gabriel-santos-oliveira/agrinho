@@ -1,6 +1,5 @@
 :root {
 --verde: #2e7d32;
---claro: #ffffff;
 --escuro: #121212;
 }
 
@@ -20,6 +19,7 @@ padding: 10px;
 
 .controls button {
 margin: 5px;
+padding: 5px 10px;
 cursor: pointer;
 }
 
@@ -27,7 +27,7 @@ cursor: pointer;
 .hero {
 text-align: center;
 padding: 60px;
-background: url('assets/img/agro.jpg') center;
+background: url('https://images.unsplash.com/photo-1464226184884-fa280b87c399') center;
 background-size: cover;
 color: white;
 }
@@ -47,22 +47,16 @@ border-radius: 5px;
 background: darkgreen;
 }
 
-/* GALERIA */
-.galeria {
-display: flex;
-flex-wrap: wrap;
-gap: 10px;
-justify-content: center;
+/* FORM */
+.form-section {
+padding: 20px;
+text-align: center;
 }
 
-.galeria img {
-width: 250px;
-border-radius: 10px;
-transition: 0.3s;
-}
-
-.galeria img:hover {
-transform: scale(1.1);
+/* SIMULADOR */
+.simulador {
+padding: 20px;
+text-align: center;
 }
 
 /* DADOS */
@@ -74,20 +68,45 @@ color: white;
 padding: 30px;
 }
 
+/* GALERIA */
+.galeria {
+display: flex;
+flex-wrap: wrap;
+gap: 15px;
+justify-content: center;
+padding: 20px;
+}
+
+.galeria img {
+width: 300px;
+height: 200px;
+object-fit: cover;
+border-radius: 12px;
+transition: 0.3s;
+}
+
+.galeria img:hover {
+transform: scale(1.08);
+}
+
+/* LINKS EXTERNOS */
+.links-externos {
+text-align: center;
+padding: 20px;
+}
+
+.links-externos button {
+margin: 10px;
+padding: 10px;
+cursor: pointer;
+}
+
 /* RESPONSIVO */
 @media (max-width: 768px) {
 .dados {
 flex-direction: column;
 text-align: center;
 }
-
-```
-.galeria {
-    flex-direction: column;
-    align-items: center;
-}
-```
-
 }
 
 /* DARK MODE */
