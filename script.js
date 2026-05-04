@@ -1,57 +1,82 @@
-// Variáveis para controle de acessibilidade
-let fontSize = 16;
-const mainContent = document.getElementById('main-content');
+// Controle de fonte
+let tamanho = 16;
 
-// 1. Controle de Tamanho de Fonte
-document.getElementById('font-increase').addEventListener('click', () => {
-    fontSize += 2;
-    document.body.style.fontSize = fontSize + 'px';
-});
+document.getElementById("increase-font").onclick = () => {
+tamanho += 2;
+document.body.style.fontSize = tamanho + "px";
+};
 
-document.getElementById('font-decrease').addEventListener('click', () => {
-    if(fontSize > 12) fontSize -= 2;
-    document.body.style.fontSize = fontSize + 'px';
-});
+document.getElementById("decrease-font").onclick = () => {
+if (tamanho > 12) {
+tamanho -= 2;
+document.body.style.fontSize = tamanho + "px";
+}
+};
 
-// 2. Modo Escuro
-const themeToggle = document.getElementById('theme-toggle');
-themeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-    themeToggle.innerText = document.body.classList.contains('dark-mode') ? "☀️ Modo Claro" : "🌙 Modo Escuro";
-});
+// Modo escuro
+document.getElementById("dark-mode").onclick = () => {
+document.body.classList.toggle("dark");
+};
 
-// 3. Saudação Personalizada (DOM Manipulation)
-function boasVindas() {
-    const nome = document.getElementById('user-name').value;
-    const feedback = document.getElementById('welcome-message');
-    
-    if(nome.length > 2) {
-        feedback.innerHTML = `<strong>Olá, ${nome}!</strong> Obrigado por se interessar pela agricultura do futuro.`;
-        feedback.style.color = "var(--secondary)";
+// Saudação personalizada
+function saudacao() {
+let nome = document.getElementById("nome").value;
+let msg = document.getElementById("mensagem");
+
+```
+if (nome.length > 2) {
+    msg.innerText = "Olá, " + nome + "! 🌱";
+} else {
+    msg.innerText = "Digite um nome válido.";
+}
+```
+
+}
+
+// Simulador
+function simular() {
+let tipo = document.getElementById("tipo").value;
+let res = document.getElementById("resultado");
+
+```
+if (tipo === "convencional") {
+    res.innerText = "Alta produção, porém maior impacto ambiental.";
+} else if (tipo === "sustentavel") {
+    res.innerText = "Equilíbrio entre produção e preservação ambiental.";
+} else {
+    res.innerText = "Escolha uma opção.";
+}
+```
+
+}
+
+// Abrir links externos
+function abrir(link) {
+window.open(link, "_blank");
+}
+
+// Contador animado
+function contador(id, valor) {
+let el = document.getElementById(id);
+let atual = 0;
+
+```
+let intervalo = setInterval(() => {
+    atual += valor / 100;
+
+    if (atual >= valor) {
+        el.innerText = valor;
+        clearInterval(intervalo);
     } else {
-        feedback.innerText = "Por favor, digite seu nome completo.";
+        el.innerText = Math.floor(atual);
     }
+}, 30);
+```
+
 }
 
-// 4. Simulador de Impacto (Contador Progressivo)
-function animarContador(id, alvo) {
-    let atual = 0;
-    let obj = document.getElementById(id);
-    let step = alvo / 100;
-    
-    let intervalo = setInterval(() => {
-        atual += step;
-        if (atual >= alvo) {
-            obj.innerText = alvo.toLocaleString();
-            clearInterval(intervalo);
-        } else {
-            obj.innerText = Math.floor(atual).toLocaleString();
-        }
-    }, 30);
-}
-
-// Inicia contadores ao carregar a página
+// Inicialização
 window.onload = () => {
-    animarContador('count-co2', 4500); // Exemplo de 4500 toneladas
-    animarContador('count-water', 125000); // Exemplo de litros
+contador("co2", 5000);
+contador("agua", 100000);
 };
