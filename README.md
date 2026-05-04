@@ -1,22 +1,15 @@
-# Agro Forte - Futuro Sustentável
+# Agro Forte: Futuro Sustentável 🌱
 
-## Objetivo
-O site "Agro Forte" tem como objetivo mostrar o equilíbrio entre a produção agrícola e a preservação do meio ambiente, destacando práticas agrícolas sustentáveis e tecnologias inovadoras.
+### Objetivo do Projeto
+Este projeto foi desenvolvido para o tema **Agrinho**, com o intuito de conscientizar sobre o equilíbrio necessário entre a alta produtividade agrícola e a preservação ambiental.
 
-## Tecnologias Utilizadas
-- HTML
-- CSS
-- JavaScript
+### Tecnologias Utilizadas
+- **HTML5**: Estrutura semântica.
+- **CSS3**: Layout responsivo (Flexbox) e Modo Escuro.
+- **JavaScript**: Manipulação dinâmica do DOM e interatividade.
+- **Canva**: Para edição e customização das imagens de destaque.
 
-## Instruções de Uso
-1. Abra o arquivo `index.html` em seu navegador.
-2. Navegue entre as seções utilizando o menu superior.
-3. Experimente o modo escuro clicando no botão "Modo Escuro".
-
-## Estrutura de Pastas
-- `/assets` - Imagens e recursos
-- `/css` - Arquivos de estilo
-- `/js` - Scripts JavaScript
-
-## Observação
-O projeto é responsivo e se adapta a diferentes tamanhos de tela, proporcionando uma boa experiência tanto em dispositivos móveis quanto em desktops.
+### Como usar
+1. Clone o repositório.
+2. Abra o arquivo `index.html` em qualquer navegador moderno.
+3. Teste a funcionalidade de "Modo Escuro" e a personalização de nome no formulário.
