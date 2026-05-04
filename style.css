@@ -19,7 +19,7 @@ padding: 10px;
 
 .controls button {
 margin: 5px;
-padding: 5px 10px;
+padding: 6px 10px;
 cursor: pointer;
 }
 
@@ -47,16 +47,10 @@ border-radius: 5px;
 background: darkgreen;
 }
 
-/* FORM */
-.form-section {
-padding: 20px;
+/* FORM / SIMULADOR */
+.form-section, .simulador {
 text-align: center;
-}
-
-/* SIMULADOR */
-.simulador {
 padding: 20px;
-text-align: center;
 }
 
 /* DADOS */
@@ -72,8 +66,8 @@ padding: 30px;
 .galeria {
 display: flex;
 flex-wrap: wrap;
-gap: 15px;
 justify-content: center;
+gap: 15px;
 padding: 20px;
 }
 
@@ -114,3 +108,4 @@ text-align: center;
 background: var(--escuro);
 color: white;
 }
+
