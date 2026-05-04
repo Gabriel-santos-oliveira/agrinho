@@ -1,96 +1,128 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agro Sustentável | Futuro Forte</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Agro Forte | Futuro Sustentável</title>
+
+```
+<!-- CSS -->
+<link rel="stylesheet" href="style.css">
+```
+
 </head>
+
 <body>
-    <header>
-        <nav>
-            <div class="logo">Agro<span>Forte</span></div>
-            <div class="nav-links">
-                <button id="font-increase">A+</button>
-                <button id="font-decrease">A-</button>
-                <button id="theme-toggle">🌙 Modo Escuro</button>
-            </div>
-        </nav>
-    </header>
 
-    <main id="main-content">
-        <section id="hero">
-            <h1>O Futuro é Verde e Produtivo</h1>
-            <p>O Brasil lidera a tecnologia agrícola mundial. Unir produtividade com a proteção dos nossos biomas não é apenas um desafio, é o nosso maior diferencial competitivo.</p>
-            <div class="cta-buttons">
-                <a href="https://www.embrapa.br/tema-meio-ambiente" target="_blank" class="btn">Meio Ambiente Embrapa</a>
-                <a href="https://www.canalrural.com.br/agricultura/" target="_blank" class="btn secondary">Notícias do Campo</a>
-                <a href="https://sistemas.agricultura.gov.br/car-web/" target="_blank" class="btn info">Cadastro Ambiental Rural</a>
-            </div>
-        </section>
+<header>
+    <nav>
+        <h1>🌱 AgroForte</h1>
 
-        <section class="container">
-            <div class="card interactive-card">
-                <h2>Seja bem-vindo ao portal do conhecimento</h2>
-                <div class="form-group">
-                    <label for="user-name">Como você se identifica? (Produtor, Estudante, Curioso)</label>
-                    <input type="text" id="user-name" placeholder="Seu nome aqui...">
-                    <button onclick="boasVindas()" class="btn-action">Conectar</button>
-                </div>
-                <p id="welcome-message"></p>
-            </div>
-        </section>
+```
+    <div class="controls">
+        <button id="increase-font">A+</button>
+        <button id="decrease-font">A-</button>
+        <button id="dark-mode">🌙</button>
+    </div>
+</nav>
+```
 
-        <section class="container stats-grid">
-            <div class="stat-box">
-                <h3 id="count-co2">0</h3>
-                <p>Toneladas de CO2 sequestradas hoje</p>
-            </div>
-            <div class="stat-box">
-                <h3 id="count-water">0</h3>
-                <p>Litros de água economizados por gotejamento</p>
-            </div>
-        </section>
+</header>
 
-        <section class="content-section">
-            <div class="text-block">
-                <h2>O Equilíbrio é a Chave</h2>
-                <p>A agricultura sustentável utiliza o conceito de <strong>ILPF (Integração Lavoura-Pecuária-Floresta)</strong>. Essa técnica permite otimizar a área, aumentar a biodiversidade e regenerar o solo, provando que o Agro Forte não destrói; ele restaura.</p>
-                <p>Além disso, o uso de drones e sensores de solo permite que o agricultor aplique defensivos e fertilizantes apenas onde é necessário, reduzindo o impacto químico em até 40%.</p>
-                <div class="external-resources">
-                    <h3>Explore mais:</h3>
-                    <div class="btn-group">
-                        <a href="https://www.wwf.org.br/natureza_brasileira/reducao_de_impactos2/agricultura/" target="_blank" class="tag">WWF Brasil & Agro</a>
-                        <a href="https://www.senar.org.br/" target="_blank" class="tag">Cursos Gratuitos SENAR</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+<main>
 
-        <section class="gallery">
-            <h2>Tecnologias que Preservam</h2>
-            <div class="grid-images">
-                <figure>
-                    <img src="assets/img/drone.jpg" alt="Drone mapeando área verde">
-                    <figcaption>Drones: Precisão absoluta no campo.</figcaption>
-                </figure>
-                <figure>
-                    <img src="assets/img/reflorestamento.jpg" alt="Mudas sendo plantadas">
-                    <figcaption>Reflorestamento de APPs.</figcaption>
-                </figure>
-                <figure>
-                    <img src="assets/img/solar.jpg" alt="Painéis solares na fazenda">
-                    <figcaption>Energia Limpa no Agro.</figcaption>
-                </figure>
-            </div>
-        </section>
-    </main>
+<section class="hero">
+    <h2>Futuro Sustentável</h2>
+    <p>Equilíbrio entre produção agrícola e meio ambiente</p>
 
-    <footer>
-        <p>Projeto Desenvolvido com Foco em Sustentabilidade - Agrinho 2024</p>
-        <p>Imagens editadas via Canva / Piskel</p>
-    </footer>
+```
+<div class="links">
+    <a href="https://www.embrapa.br" target="_blank">Embrapa</a>
+    <a href="https://www.gov.br/agricultura" target="_blank">Ministério da Agricultura</a>
+    <a href="https://www.wwf.org.br" target="_blank">WWF Brasil</a>
+</div>
+```
 
-    <script src="script.js"></script>
+</section>
+
+<section class="form-section">
+    <h2>Interação</h2>
+
+```
+<label for="nome">Digite seu nome:</label>
+<input type="text" id="nome">
+
+<button onclick="saudacao()">Enviar</button>
+
+<p id="mensagem"></p>
+```
+
+</section>
+
+<section class="simulador">
+    <h2>Simulador Sustentável</h2>
+
+```
+<select id="tipo">
+    <option value="">Escolha</option>
+    <option value="convencional">Convencional</option>
+    <option value="sustentavel">Sustentável</option>
+</select>
+
+<button onclick="simular()">Simular</button>
+
+<p id="resultado"></p>
+```
+
+</section>
+
+<section class="dados">
+    <div>
+        <h3 id="co2">0</h3>
+        <p>CO₂ reduzido</p>
+    </div>
+
+```
+<div>
+    <h3 id="agua">0</h3>
+    <p>Água economizada</p>
+</div>
+```
+
+</section>
+
+<section class="galeria">
+    <h2>Tecnologias do Agro</h2>
+
+```
+<img src="assets/img/drone.jpg" alt="Drone agrícola">
+<img src="assets/img/solo.jpg" alt="Análise de solo">
+<img src="assets/img/energia.jpg" alt="Energia solar no campo">
+```
+
+</section>
+
+<section class="links-externos">
+    <h2>Explore mais</h2>
+
+```
+<button onclick="abrir('https://www.embrapa.br')">Embrapa</button>
+<button onclick="abrir('https://www.senar.org.br')">SENAR</button>
+<button onclick="abrir('https://www.canalrural.com.br')">Canal Rural</button>
+```
+
+</section>
+
+</main>
+
+<footer>
+    <p>Projeto Agrinho - Agro Forte</p>
+</footer>
+
+<!-- JS com defer (ESSENCIAL no GitHub) -->
+
+<script src="script.js" defer></script>
+
 </body>
 </html>
