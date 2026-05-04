@@ -1,32 +1,13 @@
-// Alternar Modo Escuro
-document.getElementById('modo-escuro').addEventListener('click', () => {
-    document.body.classList.toggle('modo-escuro');
+// Alternar entre modo escuro e modo claro
+const botaoModoEscuro = document.getElementById("modo-escuro");
+
+botaoModoEscuro.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+    const isDarkMode = document.body.classList.contains("dark-mode");
+    botaoModoEscuro.textContent = isDarkMode ? "Modo Claro" : "Modo Escuro";
 });
 
-// Envio de Formulário
-function handleSubmit(event) {
-    event.preventDefault();
-    const nome = document.getElementById('nome').value;
-    alert(`Obrigado, ${nome}! Sua mensagem foi enviada (simulação).`);
-    event.target.reset();
-}
-
-// Inicialização do Gráfico
-const ctx = document.getElementById('graficoImpacto').getContext('2d');
-new Chart(ctx, {
-    type: 'bar',
-    data: {
-        labels: ['Convencional', 'Sustentável'],
-        datasets: [{
-            label: 'Emissão de CO2 (Toneladas)',
-            data: [1500, 200],
-            backgroundColor: ['#d9534f', '#28a745']
-        }]
-    },
-    options: {
-        responsive: true,
-        plugins: {
-            legend: { display: false }
-        }
-    }
-});
+// Exemplo de como manipular conteúdo dinamicamente
+const sobreSection = document.getElementById("sobre");
+const sobreTexto = "A agricultura sustentável é o caminho para o futuro, onde a tecnologia e a preservação ambiental andam lado a lado para garantir a segurança alimentar e a preservação dos recursos naturais para as próximas gerações.";
+sobreSection.querySelector("p").textContent = sobreTexto;
