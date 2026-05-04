@@ -1,78 +1,88 @@
+:root {
+    --primary: #2d5a27;
+    --secondary: #8bc34a;
+    --dark: #1b1b1b;
+    --light: #f4f4f4;
+    --transition: all 0.3s ease;
+}
+
+/* Modo Escuro */
+body.dark-mode {
+    --primary: #8bc34a;
+    --light: #1b1b1b;
+    --dark: #f4f4f4;
+    background-color: #121212;
+    color: white;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: var(--light);
+    transition: var(--transition);
 }
 
 header {
-    background-color: #28a745;
-    padding: 20px;
+    background: var(--primary);
+    padding: 1rem 5%;
+    color: white;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo span { font-weight: bold; color: var(--secondary); }
+
+#hero {
     text-align: center;
+    padding: 80px 10%;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('assets/img/hero-bg.jpg');
+    background-size: cover;
+    color: white;
 }
 
-nav ul {
-    list-style: none;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 10px;
-}
-
-nav ul li a {
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: var(--secondary);
     color: white;
     text-decoration: none;
-    font-weight: bold;
-}
-
-section {
-    padding: 20px;
+    border-radius: 5px;
     margin: 10px;
+    transition: var(--transition);
 }
 
-section img {
-    width: 100%;
-    max-width: 600px;
-    display: block;
-    margin-top: 20px;
+.btn:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.1);
 }
 
-button {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+.grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 40px 10%;
 }
 
-button:hover {
-    background-color: #218838;
+.pilar-item {
+    flex: 1;
+    min-width: 300px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 /* Responsividade */
-@media screen and (max-width: 768px) {
-    nav ul {
-        text-align: center;
-    }
-
-    nav ul li {
-        display: block;
-        margin: 10px 0;
-    }
-
-    section {
-        padding: 15px;
-    }
-}
-
-body.dark-mode {
-    background-color: #333;
-    color: white;
+@media (max-width: 768px) {
+    #hero h1 { font-size: 1.5rem; }
+    .grid-container { flex-direction: column; }
 }
