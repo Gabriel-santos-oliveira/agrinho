@@ -1,125 +1,169 @@
 :root {
---verde: #2e7d32;
---escuro: #121212;
+    --verde: #2e7d32;
+    --escuro: #121212;
 }
 
+/* ===== BODY ===== */
 body {
-margin: 0;
-font-family: Arial, sans-serif;
-background: #f5f5f5;
-transition: 0.3s;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    color: #222;
+    transition: 0.3s;
 }
 
-/* HEADER */
+/* ===== HEADER ===== */
 header {
-background: var(--verde);
-color: white;
-padding: 10px;
+    background: var(--verde);
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .controls button {
-margin: 5px;
-padding: 6px 10px;
-cursor: pointer;
+    margin: 0 5px;
+    padding: 6px 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    transition: 0.3s;
 }
 
-/* HERO */
+.controls button:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* ===== HERO ===== */
 .hero {
-text-align: center;
-padding: 60px;
-background: url('https://images.unsplash.com/photo-1464226184884-fa280b87c399') center;
-background-size: cover;
-color: white;
+    text-align: center;
+    padding: 60px 20px;
+    background: url('https://images.unsplash.com/photo-1464226184884-fa280b87c399') center/cover no-repeat;
+    color: white;
 }
 
-/* LINKS */
+.hero h2 {
+    font-size: 2.5rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* ===== LINKS ===== */
 .links a {
-display: inline-block;
-margin: 10px;
-padding: 10px;
-background: green;
-color: white;
-text-decoration: none;
-border-radius: 5px;
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 15px;
+    background: green;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
 }
 
 .links a:hover {
-background: darkgreen;
+    background: darkgreen;
 }
 
-/* FORM E SIMULADOR */
-.form-section, .simulador {
-text-align: center;
-padding: 20px;
+/* ===== CONTEÚDO ===== */
+.conteudo {
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: auto;
 }
 
-/* DADOS */
-.dados {
-display: flex;
-justify-content: space-around;
-background: var(--verde);
-color: white;
-padding: 30px;
+.conteudo p {
+    line-height: 1.6;
+    margin-bottom: 20px;
 }
 
-/* GALERIA */
+/* ===== GALERIA ===== */
 .galeria {
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-gap: 15px;
-padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 20px;
+    justify-items: center;
 }
 
 .galeria img {
-width: 300px;
-height: 200px;
-object-fit: cover;
-border-radius: 12px;
-transition: 0.3s;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: 0.3s;
 }
 
 .galeria img:hover {
-transform: scale(1.05);
+    transform: scale(1.05);
 }
 
-/* LINKS EXTERNOS */
+/* ===== LINKS EXTERNOS ===== */
 .links-externos {
-text-align: center;
-padding: 20px;
+    text-align: center;
+    padding: 20px;
 }
 
 .links-externos button {
-margin: 10px;
-padding: 10px;
-cursor: pointer;
+    margin: 10px;
+    padding: 10px 15px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--verde);
+    color: white;
+    transition: 0.3s;
 }
 
-/* RESPONSIVO */
+.links-externos button:hover {
+    background-color: darkgreen;
+}
+
+/* ===== RESPONSIVO ===== */
 @media (max-width: 768px) {
-.dados {
-flex-direction: column;
-text-align: center;
+    .conteudo {
+        padding: 20px 10px;
+    }
+
+    .hero {
+        padding: 40px 10px;
+    }
+
+    .galeria img {
+        height: 180px;
+    }
 }
 
-```
-.galeria img {
-    width: 90%;
-}
-```
-
+/* ===== DARK MODE ===== */
+body.dark-mode {
+    background: var(--escuro);
+    color: white;
 }
 
-/* DARK MODE */
-.dark {
-background: var(--escuro);
-color: white;
+body.dark-mode header {
+    background: #1e1e1e;
 }
 
-.dark header {
-background: #1e1e1e;
+body.dark-mode .links a,
+body.dark-mode .links-externos button {
+    background-color: #2e7d32;
+    color: white;
 }
 
-.dark .dados {
-background: #333;
+body.dark-mode .links a:hover,
+body.dark-mode .links-externos button:hover {
+    background-color: #1b5e20;
+}
+
+body.dark-mode .hero {
+    filter: brightness(0.8);
+}
+
+body.dark-mode .galeria img {
+    filter: brightness(0.85);
 }
