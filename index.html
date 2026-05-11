@@ -31,48 +31,42 @@
     </div>
 </section>
 
-<section class="form-section">
-    <h2>Interação</h2>
-    <label for="nome">Digite seu nome:</label>
-    <input type="text" id="nome">
-    <button onclick="saudacao()">Enviar</button>
-    <p id="mensagem"></p>
-</section>
+<section class="conteudo">
+    <h2>Sobre Agricultura Sustentável</h2>
+    <p>
+        A agricultura sustentável busca produzir alimentos de forma responsável, garantindo o equilíbrio com o meio ambiente.
+        Técnicas como rotação de culturas, uso eficiente da água e energia renovável ajudam a reduzir impactos negativos e preservar recursos naturais.
+    </p>
 
-<section class="simulador">
-    <h2>Simulador Sustentável</h2>
-    <select id="tipo">
-        <option value="">Escolha</option>
-        <option value="convencional">Convencional</option>
-        <option value="sustentavel">Sustentável</option>
-    </select>
-    <button onclick="simular()">Simular</button>
-    <p id="resultado"></p>
-</section>
+    <p>
+        Tecnologias como drones, sensores de solo e sistemas de irrigação inteligentes tornam a produção mais eficiente e sustentável,
+        permitindo um monitoramento mais preciso das plantações e redução de desperdícios.
+    </p>
 
-<section class="dados">
-    <div>
-        <h3 id="co2">0</h3>
-        <p>CO₂ reduzido</p>
+    <div class="midia">
+        <h3>Vídeos Educativos</h3>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID_AQUI" 
+        title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID_AQUI2" 
+        title="YouTube video player" frameborder="0" allowfullscreen></iframe>
     </div>
-    <div>
-        <h3 id="agua">0</h3>
-        <p>Água economizada</p>
-    </div>
-</section>
 
-<section class="galeria">
-    <h2>Tecnologias do Agro</h2>
-    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef" alt="Drone agrícola">
-    <img src="https://images.unsplash.com/photo-1598514982846-1a3b7c7b0c3c" alt="Análise de solo">
-    <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231" alt="Energia solar no campo">
+    <div class="imagens">
+        <h3>Imagens Inspiradoras</h3>
+        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef" alt="Drone agrícola">
+        <img src="https://images.unsplash.com/photo-1598514982846-1a3b7c7b0c3c" alt="Análise de solo">
+        <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231" alt="Energia solar no campo">
+        <img src="https://images.unsplash.com/photo-1581090700227-3c0f6d879e0d" alt="Plantação sustentável">
+    </div>
 </section>
 
 <section class="links-externos">
     <h2>Saiba mais</h2>
-    <button onclick="abrir('https://www.embrapa.br')">Embrapa</button>
-    <button onclick="abrir('https://www.senar.org.br')">SENAR</button>
-    <button onclick="abrir('https://www.canalrural.com.br')">Canal Rural</button>
+    <button onclick="window.open('https://www.embrapa.br')">Embrapa</button>
+    <button onclick="window.open('https://www.senar.org.br')">SENAR</button>
+    <button onclick="window.open('https://www.canalrural.com.br')">Canal Rural</button>
+    <button onclick="window.open('https://www.wwf.org.br')">WWF Brasil</button>
 </section>
 
 </main>
