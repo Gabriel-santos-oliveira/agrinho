@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Modo escuro
     if (dark) {
         dark.addEventListener("click", () => {
+            // ADICIONA ou REMOVE a classe correta usada no CSS
             document.body.classList.toggle("dark-mode");
         });
     }
